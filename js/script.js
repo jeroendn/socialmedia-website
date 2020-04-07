@@ -22,7 +22,12 @@ $(document).ready(function() {
     });
 
     request.done(function () {
-      window.location.href = 'documents';
+      window.location.href = 'home';
+    });
+
+    request.fail((error) => {
+      $(this).find('.alert').remove();
+      $(this).prepend('<div class="alert alert-warning">' + error.statusText + '</div>')
     });
 
     request.always(function () {
@@ -52,7 +57,12 @@ $(document).ready(function() {
     });
 
     request.done(function () {
-      window.location.href = 'documents';
+      window.location.href = 'home';
+    });
+
+    request.fail((error) => {
+      $(this).find('.alert').remove();
+      $(this).prepend('<div class="alert alert-warning">' + error.statusText + '</div>')
     });
 
     request.always(function () {

@@ -10,17 +10,14 @@ main.page-content {
   min-height: 50vh;
 }
 
-.content-box {
-  background-color: #fff;
-  border-radius: 5px;
-  box-shadow: 0 0px 30px -30px #000;
-  padding: 50px;
+.container {
+  max-width: 800px;
 }
 
-.red-btn {
-  width: 100%;
-  padding: 15px 0;
-  font-weight: bold;
+@media screen and (max-width: 840px) {
+  .container {
+    max-width: 95%;
+  }
 }
 
 .form-control {
@@ -29,22 +26,4 @@ main.page-content {
 
 .alert {
   text-align: center;
-}
-
-.page-title .back-btn {
-  text-decoration: none;
-}
-
-.page-title .back-btn:before {
-  content: '\f053';
-  font-family: 'Font Awesome 5 Free';
-  font-weight: 700;
-  font-size: 15px;
-  margin-right: 10px;
-}
-
-#home-page a.btn.btn-lg.btn-block {
-  font-weight: bold;
-  font-size: 30px;
-  font-family: 'Varela Round';
 }

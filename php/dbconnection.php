@@ -2,7 +2,7 @@
 $servername = "localhost";
 $dBUsername = "root";
 $dBPassword = "";
-$dBName = "cloudstorage";
+$dBName = "socialmedia";
 
 try {
 	$conn = new PDO("mysql:host=$servername;dbname=$dBName",$dBUsername,$dBPassword);

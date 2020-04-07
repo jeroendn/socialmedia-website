@@ -19,35 +19,27 @@ if (isset($_SESSION['user_id'])) {
     <?php include_once __DIR__ . '../../php/header.php' ?>
 
     <main id="login" class="page-content">
-			<div class="container card mt-5 pt-3 pr-5 pb-2 pl-5">
-				<p></p>
+			<div class="container card mt-5 pt-3 pr-5 pl-5">
+				<p class="text-center">Create your own Posting-it account and start sharing and interacting!</p>
 			</div>
       <div class="container card mt-4 p-5">
-				<h4>Log in:</h4>
+
+				<h4 class="text-center">Sign in</h4>
         <form id="login-form">
-          <!-- email -->
-          <!-- <label class="text-light" for="mail">E-mail:</label> -->
-          <input class="form-control" type="text" name="mail" id="mail" placeholder="E-mail">
-          <!-- password -->
-          <!-- <label class="text-light" for="password">Password:</label> -->
-          <input class="form-control" type="password" name="password" id="password" placeholder="Password">
-          <!-- submit -->
+          <input class="form-control text-center" type="text" name="mail" id="mail" placeholder="e-mail">
+          <input class="form-control text-center" type="password" name="password" id="password" placeholder="password">
           <input class="btn btn-primary font-weight-bold" type="submit" value="Log In">
         </form>
-				<h4 class="mt-5">Register:</h4>
+
+				<h4 class="mt-5 text-center">Create account</h4>
 				<form id="register-form">
-					<!-- username -->
-					<!-- <label class="text-light" for="username">Username:</label> -->
-					<input class="form-control" type="text" name="username" id="username" placeholder="Username">
-					<!-- email -->
-					<!-- <label class="text-light" for="mail">E-mail:</label> -->
-					<input class="form-control" type="text" name="mail" id="mail" placeholder="E-mail">
-					<!-- password -->
-					<!-- <label class="text-light" for="password">Password:</label> -->
-					<input class="form-control" type="password" name="password" id="password" placeholder="Password">
-					<!-- submit -->
+					<input class="form-control text-center" type="text" name="username" id="username" placeholder="username">
+					<input class="form-control text-center" type="text" name="mail" id="mail" placeholder="e-mail">
+					<input class="form-control text-center" type="password" name="password" id="password" placeholder="password">
+					<input class="form-control text-center" type="password" name="repeated-password" id="repeated-password" placeholder="repeat password">
 					<input class="btn btn-primary font-weight-bold" type="submit" value="Sign Up">
 				</form>
+
       </div>
     </main>
 

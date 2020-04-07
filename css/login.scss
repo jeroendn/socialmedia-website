@@ -1,0 +1,9 @@
+@import 'var.scss';
+
+#login {
+  form {
+    input[type="submit"] {
+      width: 100%;
+    }
+  }
+}
