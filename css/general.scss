@@ -1,0 +1,56 @@
+@import 'var.scss';
+
+html, body {
+  background-color: #F7F0F7;
+  margin: 0;
+  overflow-x: hidden;
+  width: 100vw;
+  scroll-behavior: smooth;
+}
+
+main.page-content {
+  min-height: 50vh;
+}
+
+.content-box {
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0px 30px -30px #000;
+  padding: 50px;
+}
+
+.red-btn {
+  width: 100%;
+  padding: 15px 0;
+  font-weight: bold;
+}
+
+.form-control {
+  margin-bottom: 10px;
+}
+
+.alert {
+  text-align: center;
+}
+
+.page-title {
+  .back-btn {
+    text-decoration: none;
+
+    &:before {
+      content: '\f053';
+      font-family: 'Font Awesome 5 Free';
+      font-weight: 700;
+      font-size: 15px;
+      margin-right: 10px;
+    }
+  }
+}
+
+#home-page {
+  a.btn.btn-lg.btn-block {
+    font-weight: bold;
+    font-size: 30px;
+    font-family: 'Varela Round';
+  }
+}

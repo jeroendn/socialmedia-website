@@ -1,0 +1,32 @@
+@import 'var.scss';
+
+#footer {
+  min-height: 400px;
+  width: 100%;
+  background-color: $accent1;
+  border-top: 10px solid $accent2;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: flex-end;
+
+  #footer-wrap {
+    width: 100%;
+    padding: 0 10%;
+  }
+
+  #bottom-bar {
+    height: 50px;
+    width: 100%;
+    background: $accent3;
+    padding: 0 10%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    p {
+      font-size: 10px;
+      margin-bottom: 0;
+      color: #fff;
+    }
+  }
+}
