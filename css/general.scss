@@ -6,10 +6,24 @@ html, body {
   overflow-x: hidden;
   width: 100vw;
   scroll-behavior: smooth;
+  background: $dark;
+}
+
+::-webkit-scrollbar {
+  width: calc(10px);
+}
+::-webkit-scrollbar-track {
+  background: $dark2;
+}
+::-webkit-scrollbar-thumb {
+  background: $light;
+}
+::-webkit-scrollbar-button {
+  display: none;
 }
 
 main.page-content {
-  min-height: 50vh;
+  min-height: 150vh;
 }
 
 .container {

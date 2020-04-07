@@ -1,12 +1,7 @@
-<footer id="footer" class="mt-5">
-
-  <div id="footer-wrap">
-
-  </div>
-
-  <div id="bottom-bar">
-    <p>2020 Posting-it&#169;</p>
-    <a href="#!"></a>
-  </div>
-
+<footer id="footer">
+  <nav id="main-menu" class="container">
+    <li class="menu-item"><a href="profile" class="fas fa-user"></a></li>
+    <li class="menu-item"><a href="home" class="fas fa-home"></a></li>
+    <li class="menu-item"><a href="follows" class="fas fa-users"></a></li>
+  </nav>
 </footer>

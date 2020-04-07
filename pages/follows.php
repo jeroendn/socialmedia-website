@@ -5,7 +5,7 @@ include_once __DIR__ . '../../php/session.php';
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Posting-it - Feed</title>
+    <title>Posting-it - Following</title>
     <meta name="description" content=""/>
     <?php include_once __DIR__ . '../../php/head.php' ?>
   </head>

@@ -4,10 +4,27 @@ html, body {
   overflow-x: hidden;
   width: 100vw;
   scroll-behavior: smooth;
+  background: #333;
+}
+
+::-webkit-scrollbar {
+  width: calc(10px);
+}
+
+::-webkit-scrollbar-track {
+  background: #444;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #f7f7f7;
+}
+
+::-webkit-scrollbar-button {
+  display: none;
 }
 
 main.page-content {
-  min-height: 50vh;
+  min-height: 150vh;
 }
 
 .container {
