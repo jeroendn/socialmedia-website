@@ -41,3 +41,8 @@
   text-decoration: none;
   bottom: -2px;
 }
+
+#secondary-footer {
+  height: 100px;
+  width: 100%;
+}

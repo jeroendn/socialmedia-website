@@ -27,7 +27,7 @@ $(document).ready(function() {
 
     request.fail((error) => {
       $(this).find('.alert').remove();
-      $(this).prepend('<div class="alert alert-warning">' + error.statusText + '</div>')
+      $(this).prepend('<div class="alert alert-warning">' + error.statusText + '!</div>')
     });
 
     request.always(function () {
@@ -62,7 +62,7 @@ $(document).ready(function() {
 
     request.fail((error) => {
       $(this).find('.alert').remove();
-      $(this).prepend('<div class="alert alert-warning">' + error.statusText + '</div>')
+      $(this).prepend('<div class="alert alert-warning">' + error.statusText + '!</div>')
     });
 
     request.always(function () {

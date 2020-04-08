@@ -24,11 +24,12 @@ html, body {
 }
 
 main.page-content {
-  min-height: 150vh;
+  min-height: 50vh;
 }
 
 .container {
   max-width: 800px;
+  color: #f7f7f7;
 }
 
 @media screen and (max-width: 840px) {
@@ -43,4 +44,19 @@ main.page-content {
 
 .alert {
   text-align: center;
+  background: #dd6d0a;
+  color: #f7f7f7;
+  font-weight: bold;
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.card {
+  background: #333;
+  border-color: #f7f7f7;
+  box-shadow: 0 0 0 0.1rem rgba(255, 255, 255, 0.25);
+}
+
+.form-control:focus {
+  box-shadow: 0 0 0 0.2rem rgba(255, 255, 255, 0.25);
+  border-color: #333;
 }

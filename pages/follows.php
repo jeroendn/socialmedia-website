@@ -7,11 +7,11 @@ include_once __DIR__ . '../../php/session.php';
   <head>
     <title>Posting-it - Following</title>
     <meta name="description" content=""/>
-    <?php include_once __DIR__ . '../../php/head.php' ?>
+    <?php include_once __DIR__ . '../../php/head.php'; ?>
   </head>
 
   <body>
-    <?php include_once __DIR__ . '../../php/header.php' ?>
+    <?php include_once __DIR__ . '../../php/header.php'; ?>
 
     <main id="documents" class="page-content">
       <section class="container mt-3">
@@ -23,7 +23,7 @@ include_once __DIR__ . '../../php/session.php';
       </section>
     </main>
 
-    <?php include_once __DIR__ . '../../php/footer.php' ?>
-    <?php include_once __DIR__ . '../../php/js_include.php' ?>
+    <?php include_once __DIR__ . '../../php/footer.php'; ?>
+    <?php include_once __DIR__ . '../../php/js_include.php'; ?>
   </body>
 </html>
