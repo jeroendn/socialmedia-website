@@ -70,4 +70,6 @@ $(document).ready(function() {
     });
   });
 
+  $('#profile .profile-img img').css('max-height', $('#profile .profile-img img').outerWidth());
+
 });

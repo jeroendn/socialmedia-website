@@ -5,7 +5,7 @@ include_once '../../php/dbconnection.php';
 $mail = $_POST['mail'];
 $password = $_POST['password'];
 $repeated_password = $_POST['repeated-password'];
-$name = $_POST['username'];
+$name = str_replace(' ', '_', $_POST['username']);
 
 if ($mail != '' && $password != '' && $repeated_password != '' && $name != '' && filter_var($mail, FILTER_VALIDATE_EMAIL)) {
 

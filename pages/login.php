@@ -15,7 +15,6 @@ if (isset($_SESSION['user_id'])) {
   </head>
 
   <body>
-    <!-- header -->
     <?php include_once __DIR__ . '../../php/header.php'; ?>
 
     <main id="login" class="page-content">
@@ -43,10 +42,7 @@ if (isset($_SESSION['user_id'])) {
       </div>
     </main>
 
-    <!-- footer -->
     <?php include_once __DIR__ . '../../php/footer.php'; ?>
-
-    <!-- scripts -->
     <?php include_once __DIR__ . '../../php/js_include.php'; ?>
   </body>
 </html>

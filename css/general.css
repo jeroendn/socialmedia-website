@@ -60,3 +60,7 @@ main.page-content {
   box-shadow: 0 0 0 0.2rem rgba(255, 255, 255, 0.25);
   border-color: #333;
 }
+
+.btn {
+  width: 100%;
+}

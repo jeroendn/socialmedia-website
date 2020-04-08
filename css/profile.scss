@@ -1,0 +1,71 @@
+@import 'var.scss';
+
+.profile-header {
+  border-bottom: 1px solid $light;
+  display: flex;
+  flex-flow: row wrap;
+
+  .profile-img {
+    flex: 0 0 30%;
+    max-width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 2%;
+
+    img {
+      width: 100%;
+      max-width: 100%;
+      background: $light;
+      border: 1px solid $dark;
+      border-radius: 5%;
+      box-shadow: 0 0 0 0.1rem rgba(255,255,255,.25);
+      object-fit: cover;
+      user-select: none;
+      -webkit-user-drag: none;
+    }
+  }
+
+  .profile-info {
+    flex: 0 0 70%;
+    max-width: 70%;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    padding: 2%;
+
+    h4 {
+      flex: 0 0 60%;
+      max-width: 60%;
+      margin-bottom: 0;
+    }
+
+    button {
+      flex: 0 0 40%;
+      max-width: 40%;
+      height: fit-content;
+    }
+
+    p {
+      flex: 0 0 100%;
+      max-width: 100%;
+      margin-bottom: 0;
+    }
+  }
+
+  .admin-buttons {
+    background: #00f;
+    flex: 0 0 100%;
+    max-width: 100%;
+    display: flex;
+    justify-content: space-around;
+
+    button.btn {
+      margin: 10px;
+    }
+  }
+}
+
+.profile-posts {
+
+}

@@ -10,4 +10,5 @@ try {
 }
 catch(PDOException $e) {
   ?><p style="display: block; background: #f00; color: #fff; text-align: center; margin-bottom: 0;">Couldn't connenct to database: <?php echo $e->getMessage();?></p><?php
+	exit();
 }
