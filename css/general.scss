@@ -26,6 +26,14 @@ main.page-content {
   min-height: 50vh;
 }
 
+button.btn-follow, button.btn-unfollow {
+  display: none;
+
+  &.active {
+    display: block;
+  }
+}
+
 // bootstrap overwrites
 
 .container {
@@ -47,6 +55,7 @@ main.page-content {
   color: $light;
   font-weight: bold;
   border-color: rgba(255, 255, 255, .5);
+  width: 100%;
 }
 
 .card {
@@ -64,4 +73,5 @@ main.page-content {
 
 .btn {
   width: 100%;
+  font-weight: bold;
 }

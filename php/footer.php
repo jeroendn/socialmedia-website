@@ -10,5 +10,4 @@
 </footer>
 <?php } ?>
 
-<footer id="secondary-footer">
-</footer>
+<footer id="secondary-footer"></footer>

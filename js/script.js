@@ -51,7 +51,7 @@ $(document).ready(function() {
     inputs.prop("disabled", true);
 
     request = $.ajax({
-      url: "php/ajax/register.php",
+      url: "php/ajax/register_submit.php",
       type: "post",
       data: serializedData
     });
@@ -71,5 +71,35 @@ $(document).ready(function() {
   });
 
   $('#profile .profile-img img').css('max-height', $('#profile .profile-img img').outerWidth());
+
+  // follow a user
+  $('button.btn-follow').on('click', function () {
+    let username = $(this).attr('user');
+
+    $.ajax({
+      url: "php/ajax/follow_submit.php",
+      type: "post",
+      data: { username:username }
+    })
+    .done(() => {
+      $(this).removeClass('active');
+      $(this).parent().find('.btn-unfollow').addClass('active');
+    });
+  });
+
+  // unfollow a user
+  $('button.btn-unfollow').on('click', function () {
+    let username = $(this).attr('user');
+
+    $.ajax({
+      url: "php/ajax/unfollow_submit.php",
+      type: "post",
+      data: { username:username }
+    })
+    .done(() => {
+      $(this).removeClass('active');
+      $(this).parent().find('.btn-follow').addClass('active');
+    });
+  });
 
 });

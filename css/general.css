@@ -27,6 +27,14 @@ main.page-content {
   min-height: 50vh;
 }
 
+button.btn-follow, button.btn-unfollow {
+  display: none;
+}
+
+button.btn-follow.active, button.btn-unfollow.active {
+  display: block;
+}
+
 .container {
   max-width: 800px;
   color: #f7f7f7;
@@ -48,6 +56,7 @@ main.page-content {
   color: #f7f7f7;
   font-weight: bold;
   border-color: rgba(255, 255, 255, 0.5);
+  width: 100%;
 }
 
 .card {
@@ -63,4 +72,5 @@ main.page-content {
 
 .btn {
   width: 100%;
+  font-weight: bold;
 }

@@ -53,19 +53,18 @@ else {
           ?>
 
           <div class="profile-img">
-            <img src="php/get_profile_icon.php?user=<?php echo $user_data[0]['username'] ?>" />
+            <img src="php/get_profile_icon.php?user=<?php echo htmlspecialchars($user_data[0]['username']) ?>" />
           </div>
           <div class="profile-info">
-            <h4><?php echo $user_data[0]['username'] ?></h4>
-            <button class="btn btn-primary" task="follow">follow</button>
+            <h4><?php echo htmlspecialchars($user_data[0]['username']) ?></h4>
+            <?php if(!$is_owner) { $user_id = $user_data[0]['id']; include __DIR__ . '../../php/template_parts/follow_btn.php'; } ?>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
           </div>
-          <!-- <div class="admin-buttons">
-            <button class="btn btn-warning" task="follow">follow</button>
-            <button class="btn btn-warning" task="follow">follow</button>
-            <button class="btn btn-warning" task="follow">follow</button>
-          </div> -->
-          <?php
+          <?php if($is_owner) { ?>
+          <div class="admin-buttons">
+            <button class="btn btn-warning" task="update">Update profile</button>
+          </div>
+        <?php }
         }
         else {
           echo '<div class="alert">User has not been found!</div>';
