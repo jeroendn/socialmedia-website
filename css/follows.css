@@ -1,0 +1,22 @@
+#follows .card {
+  flex-flow: row wrap;
+  align-items: center;
+}
+
+#follows .card img {
+  flex: 0 0 10%;
+  max-width: 10%;
+  object-fit: contain;
+}
+
+#follows .card p {
+  margin-bottom: 0;
+  flex: 0 0 50%;
+  max-width: 50%;
+  padding-left: 15px;
+}
+
+#follows .card button {
+  flex: 0 0 40%;
+  max-width: 40%;
+}
