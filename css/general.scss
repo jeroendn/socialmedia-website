@@ -22,6 +22,17 @@ html, body {
   display: none;
 }
 
+#preloader {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1000;
+  background: $dark;
+  background-image: url('../design/preloader.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
 main.page-content {
   min-height: 50vh;
 }

@@ -70,7 +70,7 @@ $(document).ready(function() {
     });
   });
 
-  $('#profile .profile-img img').css('max-height', $('#profile .profile-img img').outerWidth());
+  $('#profile .profile-img img').css('max-height', $('#profile .profile-img img').outerWidth()).css('height', $('#profile .profile-img img').outerWidth());
 
   // follow a user
   $('button.btn-follow').on('click', function () {
@@ -107,33 +107,11 @@ $(document).ready(function() {
     $(this).parent().find('input[type="file"]').click();
   });
 
-  $('#profile .admin-buttons button').attr('task', 'update').on('click', function() {
-    var fd = new FormData();
-    var files = $('#profile .profile-img input[type="file"]')[0].files[0];
-    fd.append('file', files);
-
-    var hallo = 'Hallo';
-
-    console.log(files);
-
-    $.ajax({
-      url: 'php/ajax/profile_submit.php',
-      type: 'post',
-      data: { files:fd, hallo:hallo },
-    })
-    .done(() => {
-      console.log('success');
-    })
-    .fail((error) => {
-      console.log(error.statusText);
-    });
-
-    console.log('upload');
-  });
-
   // go to user profile on img click
   $('#follows .card img').on('click', function() {
     $(this).parent().find('a')[0].click();
   });
+
+  $('#preloader').fadeOut(500);
 
 });

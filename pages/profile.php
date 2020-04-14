@@ -32,7 +32,7 @@ else {
     <?php include_once __DIR__ . '../../php/header.php'; ?>
 
     <main id="profile" class="page-content">
-      <section class="container mt-3 mb-3 pb-3 profile-header">
+      <form class="container mt-3 mb-3 pb-3 profile-header" action="php/ajax/profile_submit.php" method="post" enctype="multipart/form-data">
         <?php
         if ($user_check > 0) {
           try {
@@ -56,7 +56,7 @@ else {
             <img src="php/get_profile_icon.php?user=<?php echo htmlspecialchars($user_data[0]['username']); ?>" />
             <?php if($is_owner) {?>
               <div class="overlay"></div>
-              <input type="file">
+              <input type="file" name="file_upload">
             <?php } ?>
           </div>
           <div class="profile-info">
@@ -70,7 +70,7 @@ else {
             <?php if(!$is_owner) { $user_id = $user_data[0]['id']; include __DIR__ . '../../php/template_parts/follow_btn.php'; } ?>
             <!-- bio -->
             <?php if($is_owner) {?>
-            <textarea class="form-control" placeholder="Your bio"><?php echo htmlspecialchars($user_data[0]['bio']); ?></textarea>
+            <textarea class="form-control" name="bio" placeholder="Your bio"><?php echo htmlspecialchars($user_data[0]['bio']); ?></textarea>
             <?php } else { ?>
             <p><?php echo htmlspecialchars($user_data[0]['bio']); ?></p>
             <?php } ?>
@@ -85,7 +85,7 @@ else {
           echo '<div class="alert">User has not been found!</div>';
         }
         ?>
-      </section>
+      </form>
 
       <section class="container mt-3 mb-3 profile-posts">
         <?php

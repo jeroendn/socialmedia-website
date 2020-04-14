@@ -17,7 +17,7 @@ if($user !== false && file_exists($file_dir)) {
   exit;
 }
 else {
-  $file_dir = '../design/profile_img.png';
+  $file_dir = '../design/profile_icon.png';
   readfile($file_dir);
   exit;
 }
