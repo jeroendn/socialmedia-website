@@ -131,4 +131,9 @@ $(document).ready(function() {
     console.log('upload');
   });
 
+  // go to user profile on img click
+  $('#follows .card img').on('click', function() {
+    $(this).parent().find('a')[0].click();
+  });
+
 });

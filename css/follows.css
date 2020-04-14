@@ -11,14 +11,21 @@
   border-radius: 50%;
   margin: 10px 0;
   background: #444;
+  cursor: pointer;
 }
 
-#follows .card p {
+#follows .card a {
   margin-bottom: 0;
   flex: 0 0 53%;
   max-width: 53%;
   padding-left: 15px;
+  padding-right: 15px;
   font-size: 20px;
+  color: #fff;
+}
+
+#follows .card a:hover {
+  text-decoration: none;
 }
 
 #follows .card button {
