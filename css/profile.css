@@ -11,6 +11,7 @@
   justify-content: center;
   align-items: flex-start;
   padding: 2%;
+  position: relative;
 }
 
 .profile-header .profile-img img {
@@ -25,6 +26,40 @@
   -webkit-user-drag: none;
 }
 
+.profile-header .profile-img input[type="file"] {
+  display: none;
+}
+
+.profile-header .profile-img .overlay {
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 5%;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  cursor: pointer;
+  transition: 200ms ease;
+}
+
+.profile-header .profile-img .overlay:before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  font-size: 50px;
+  background-image: url(../design/upload_img.svg);
+  background-size: 50px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.profile-header .profile-img:hover .overlay {
+  visibility: visible;
+  opacity: 1;
+}
+
 .profile-header .profile-info {
   flex: 0 0 70%;
   max-width: 70%;
@@ -32,6 +67,7 @@
   flex-flow: row wrap;
   align-items: center;
   padding: 2%;
+  max-height: 230px;
 }
 
 .profile-header .profile-info h4 {
@@ -50,6 +86,12 @@
   flex: 0 0 100%;
   max-width: 100%;
   margin-bottom: 0;
+}
+
+.profile-header .profile-info textarea {
+  height: 100%;
+  max-height: calc(100% - 50px);
+  resize: none;
 }
 
 .profile-header .admin-buttons {

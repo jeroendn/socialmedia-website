@@ -53,12 +53,27 @@ else {
           ?>
 
           <div class="profile-img">
-            <img src="php/get_profile_icon.php?user=<?php echo htmlspecialchars($user_data[0]['username']) ?>" />
+            <img src="php/get_profile_icon.php?user=<?php echo htmlspecialchars($user_data[0]['username']); ?>" />
+            <?php if($is_owner) {?>
+              <div class="overlay"></div>
+              <input type="file">
+            <?php } ?>
           </div>
           <div class="profile-info">
+            <!-- username -->
+            <?php if($is_owner) {?>
+            <input class="form-control" type="text" name="username" value="<?php echo htmlspecialchars($user_data[0]['username']); ?>" placeholder="Your username">
+            <?php } else { ?>
             <h4><?php echo htmlspecialchars($user_data[0]['username']) ?></h4>
+            <?php } ?>
+            <!-- follow button -->
             <?php if(!$is_owner) { $user_id = $user_data[0]['id']; include __DIR__ . '../../php/template_parts/follow_btn.php'; } ?>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            <!-- bio -->
+            <?php if($is_owner) {?>
+            <textarea class="form-control" placeholder="Your bio"><?php echo htmlspecialchars($user_data[0]['bio']); ?></textarea>
+            <?php } else { ?>
+            <p><?php echo htmlspecialchars($user_data[0]['bio']); ?></p>
+            <?php } ?>
           </div>
           <?php if($is_owner) { ?>
           <div class="admin-buttons">

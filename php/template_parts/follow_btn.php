@@ -1,6 +1,6 @@
-<!-- var $username & $user_id must be defined in order to work correctly -->
-
 <?php
+// var $username & $user_id must be defined in order to work correctly
+
 try {
   $sql = "SELECT COUNT(followed_user_id) FROM follow WHERE followed_user_id = '" . $user_id . "' LIMIT 1";
   $stmt = $conn->prepare($sql);
