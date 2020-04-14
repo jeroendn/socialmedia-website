@@ -4,16 +4,21 @@
 }
 
 #follows .card img {
-  flex: 0 0 10%;
-  max-width: 10%;
+  flex: 0 0 7%;
+  max-width: 7%;
   object-fit: contain;
+  box-shadow: 0 0 10px #000;
+  border-radius: 50%;
+  margin: 10px 0;
+  background: #444;
 }
 
 #follows .card p {
   margin-bottom: 0;
-  flex: 0 0 50%;
-  max-width: 50%;
+  flex: 0 0 53%;
+  max-width: 53%;
   padding-left: 15px;
+  font-size: 20px;
 }
 
 #follows .card button {

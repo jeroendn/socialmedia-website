@@ -12,8 +12,13 @@ $user_data = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 $file_dir = $dir . $user . $user_data[0]['id'] . '/profile_icon.png';
 
-if($user !== false and file_exists($file_dir)) {
-   readfile($file_dir);
-   exit;
+if($user !== false && file_exists($file_dir)) {
+  readfile($file_dir);
+  exit;
+}
+else {
+  $file_dir = '../design/profile_img.png';
+  readfile($file_dir);
+  exit;
 }
 header("HTTP/1.0 404 Not Found");
