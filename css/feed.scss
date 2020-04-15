@@ -1,0 +1,16 @@
+@import 'var.scss';
+
+#feed {
+  section:first-child {
+    // background-image: url('../design/sticky_note_stack.png');
+  }
+
+  .post {
+    // height: 720px;
+    background-image: url('../design/sticky_note_pink.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    padding: 90px;
+  }
+}

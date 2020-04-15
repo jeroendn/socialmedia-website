@@ -10,7 +10,7 @@ $dir = $_SERVER['DOCUMENT_ROOT'] . '/media/' . str_replace(' ', '_', $_SESSION['
 move_uploaded_file($_FILES["file_upload"]["tmp_name"], $dir . $file_name);
 
 // save profile data to database
-$username = $_POST['username'];
+$username = str_replace(' ', '_', $_POST['username']);
 $bio = $_POST['bio'];
 
 try {

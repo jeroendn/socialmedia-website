@@ -112,6 +112,9 @@ $(document).ready(function() {
     $(this).parent().find('a')[0].click();
   });
 
+  // hide preload spinner
   $('#preloader').fadeOut(500);
+
+  $('#feed .post').css('height', $('#feed .post').outerWidth());
 
 });
