@@ -72,6 +72,10 @@ $(document).ready(function() {
 
   $('#profile .profile-img img').css('max-height', $('#profile .profile-img img').outerWidth()).css('height', $('#profile .profile-img img').outerWidth());
 
+  $(window).resize(function() {
+    $('#profile .profile-img img').css('max-height', $('#profile .profile-img img').outerWidth()).css('height', $('#profile .profile-img img').outerWidth());
+  });
+
   // follow a user
   $('button.btn-follow').on('click', function () {
     let username = $(this).attr('user');
@@ -115,6 +119,11 @@ $(document).ready(function() {
   // hide preload spinner
   $('#preloader').fadeOut(500);
 
+  // set post img to equal height
   $('#feed .post').css('height', $('#feed .post').outerWidth());
+
+  $(window).resize(function() {
+    $('#feed .post').css('height', $('#feed .post').outerWidth());
+  });
 
 });

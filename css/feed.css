@@ -1,7 +1,43 @@
+#feed section:first-child {
+  border-bottom: 1px solid #f7f7f7;
+}
+
 #feed .post {
   background-image: url("../design/sticky_note_pink.png");
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
   padding: 90px;
+  overflow: hidden;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+}
+
+@media screen and (max-width: 840px) {
+  #feed .post {
+    padding: 10%;
+  }
+}
+
+#feed .post img {
+  width: 50px;
+}
+
+#feed .post p.message {
+  font-family: "Indie Flower", cursive;
+  font-size: 30px;
+  transform: rotate(-1deg);
+}
+
+@media screen and (max-width: 840px) {
+  #feed .post p.message {
+    font-size: 20px;
+  }
+}
+
+@media screen and (max-width: 380px) {
+  #feed .post p.message {
+    font-size: 15px;
+  }
 }

@@ -3,6 +3,7 @@
 #feed {
   section:first-child {
     // background-image: url('../design/sticky_note_stack.png');
+    border-bottom: 1px solid $light;
   }
 
   .post {
@@ -12,5 +13,31 @@
     background-size: contain;
     background-position: center;
     padding: 90px;
+    overflow: hidden;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+
+    @media screen and (max-width: $breakpoint) {
+      padding: 10%;
+    }
+
+    img {
+      width: 50px;
+    }
+
+    p.message {
+      font-family: $cursive;
+      font-size: 30px;
+      transform: rotate(-1deg);
+
+      @media screen and (max-width: $breakpoint) {
+        font-size: 20px;
+      }
+
+      @media screen and (max-width: 380px) {
+        font-size: 15px;
+      }
+    }
   }
 }
