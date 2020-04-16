@@ -37,7 +37,7 @@ include_once __DIR__ . '../../php/session.php';
 
         foreach ($posts as $post) {
           // get likes from db
-          $sql = "SELECT COUNT(likes.user_id) as likes
+          $sql = "SELECT COUNT(likes.user_id)  as likes
           FROM post
           INNER JOIN likes ON post.id=likes.post_id
           WHERE post.id = '" . $post['post_id'] . "' ";
@@ -45,7 +45,18 @@ include_once __DIR__ . '../../php/session.php';
           $stmt->execute();
           $likes = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-          ?>
+          // check if post has been seen
+          $sql = "SELECT COUNT(*)
+          FROM post
+          INNER JOIN seen ON post.id=seen.post_id
+          WHERE
+          seen.post_id = '" . $post['post_id'] . "' AND
+          seen.user_id = '" . $_SESSION['user_id'] . "' ";
+          $stmt = $conn->prepare($sql);
+          $stmt->execute();
+          $seen_check = $stmt->fetchColumn();
+
+          if ($seen_check != 0) { ?>
           <div class="post">
             <img src="php/get_profile_icon.php?user=<?php echo htmlspecialchars($post['username']); ?>" />
             <p class="user"><?php echo htmlspecialchars($post['username']); ?></p>
@@ -54,6 +65,7 @@ include_once __DIR__ . '../../php/session.php';
             <input type="hidden" name="post_id" value="<?php echo htmlspecialchars($post['post_id']); ?>">
           </div>
           <?php
+          }
         }
         ?>
 
