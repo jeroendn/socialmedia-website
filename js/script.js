@@ -116,6 +116,9 @@ $(document).ready(function() {
     $(this).parent().find('a')[0].click();
   });
 
+  // follows profile img 1x1 sizing
+  $('#follows .card img').css('height', $('#follows .card img').outerWidth());
+
   // hide preload spinner
   $('#preloader').fadeOut(500);
 

@@ -56,7 +56,7 @@ include_once __DIR__ . '../../php/session.php';
           $stmt->execute();
           $seen_check = $stmt->fetchColumn();
 
-          if ($seen_check != 0) { ?>
+          if ($seen_check <= 0) { ?>
           <div class="post">
             <img src="php/get_profile_icon.php?user=<?php echo htmlspecialchars($post['username']); ?>" />
             <p class="user"><?php echo htmlspecialchars($post['username']); ?></p>
