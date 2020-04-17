@@ -16,6 +16,10 @@ include_once __DIR__ . '../../php/session.php';
     <main id="feed" class="page-content">
       <section class="container mt-5 pb-3">
         <?php
+
+        for ($i=0; $i < 5; $i++) {
+
+
         // get posts from db
         try {
           $sql = "SELECT *, post.id as post_id
@@ -61,12 +65,15 @@ include_once __DIR__ . '../../php/session.php';
             <img src="php/get_profile_icon.php?user=<?php echo htmlspecialchars($post['username']); ?>" />
             <p class="user"><?php echo htmlspecialchars($post['username']); ?></p>
             <p class="message"><?php echo htmlspecialchars($post['text']); ?></p>
-            <p class="likes"><?php echo htmlspecialchars($likes[0]['likes']); ?></p>
+            <p class="like"><?php echo htmlspecialchars($likes[0]['likes']); ?></p>
             <input type="hidden" name="post_id" value="<?php echo htmlspecialchars($post['post_id']); ?>">
           </div>
           <?php
           }
         }
+
+
+      }
         ?>
 
       </section>

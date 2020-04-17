@@ -70,12 +70,6 @@ $(document).ready(function() {
     });
   });
 
-  $('#profile .profile-img img').css('max-height', $('#profile .profile-img img').outerWidth()).css('height', $('#profile .profile-img img').outerWidth());
-
-  $(window).resize(function() {
-    $('#profile .profile-img img').css('max-height', $('#profile .profile-img img').outerWidth()).css('height', $('#profile .profile-img img').outerWidth());
-  });
-
   // follow a user
   $('button.btn-follow').on('click', function () {
     let username = $(this).attr('user');
@@ -106,6 +100,13 @@ $(document).ready(function() {
     });
   });
 
+  // set post img to equal height
+  $('#feed .post').css('height', $('#feed .post').outerWidth());
+
+  $(window).resize(function() {
+    $('#feed .post').css('height', $('#feed .post').outerWidth());
+  });
+
   // profile img upload
   $('#profile .profile-img .overlay').on('click', function() {
     $(this).parent().find('input[type="file"]').click();
@@ -116,17 +117,7 @@ $(document).ready(function() {
     $(this).parent().find('a')[0].click();
   });
 
-  // follows profile img 1x1 sizing
-  $('#follows .card img').css('height', $('#follows .card img').outerWidth());
-
   // hide preload spinner
   $('#preloader').fadeOut(500);
-
-  // set post img to equal height
-  $('#feed .post').css('height', $('#feed .post').outerWidth());
-
-  $(window).resize(function() {
-    $('#feed .post').css('height', $('#feed .post').outerWidth());
-  });
 
 });

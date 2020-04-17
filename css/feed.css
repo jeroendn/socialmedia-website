@@ -1,3 +1,4 @@
+@charset "UTF-8";
 #feed section:first-child {
   border-bottom: 1px solid #f7f7f7;
 }
@@ -8,10 +9,10 @@
   background-size: contain;
   background-position: center;
   padding: 90px;
-  overflow: hidden;
   display: flex;
   flex-flow: row wrap;
   align-items: center;
+  position: relative;
 }
 
 @media screen and (max-width: 840px) {
@@ -20,8 +21,44 @@
   }
 }
 
+#feed .post:nth-child(3n-2) {
+  background-image: url("../design/sticky_note_yellow.png");
+  color: #333;
+}
+
+#feed .post:nth-child(3n-1) {
+  background-image: url("../design/sticky_note_green.png");
+}
+
+#feed .post:before {
+  content: '';
+  background-image: url(../design/paperclip.png);
+  position: absolute;
+  top: -1%;
+  left: 16%;
+  width: 5%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: contain;
+  z-index: 1;
+}
+
 #feed .post img {
-  width: 50px;
+  position: absolute;
+  top: 1%;
+  left: 5%;
+  width: 15%;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 0 5px 0px black;
+  transform: rotate(-15deg);
+}
+
+#feed .post p.user {
+  position: absolute;
+  top: calc(8% - 10px);
+  left: 25%;
+  font-size: 18px;
 }
 
 #feed .post p.message {
@@ -39,5 +76,37 @@
 @media screen and (max-width: 380px) {
   #feed .post p.message {
     font-size: 15px;
+  }
+}
+
+#feed .post p.like {
+  position: absolute;
+  bottom: 5%;
+  left: 15%;
+  margin-bottom: 10px;
+  font-size: 30px;
+  font-weight: bold;
+  font-family: cursive;
+}
+
+@media screen and (max-width: 840px) {
+  #feed .post p.like {
+    font-size: 20px;
+  }
+}
+
+#feed .post p.like:before {
+  content: '👍';
+  font-size: 80px;
+  position: absolute;
+  transform: rotateY(180deg) rotateZ(-15deg);
+  right: 100%;
+  bottom: 0;
+}
+
+@media screen and (max-width: 840px) {
+  #feed .post p.like:before {
+    bottom: 0;
+    font-size: calc(20px + 4vw);
   }
 }

@@ -9,6 +9,7 @@
   border-top: 1px solid #f7f7f7;
   display: flex;
   align-items: center;
+  z-index: 99;
 }
 
 #footer nav#main-menu {

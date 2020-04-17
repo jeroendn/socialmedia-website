@@ -23,6 +23,10 @@ html, body {
   display: none;
 }
 
+::selection {
+  background: rgba(255, 193, 7, 0.5);
+}
+
 #preloader {
   position: fixed;
   width: 100vw;

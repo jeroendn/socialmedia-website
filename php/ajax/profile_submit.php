@@ -13,6 +13,11 @@ move_uploaded_file($_FILES["file_upload"]["tmp_name"], $dir . $file_name);
 $username = str_replace(' ', '_', $_POST['username']);
 $bio = $_POST['bio'];
 
+if ($username == '' || $username == '') {
+  header('location: ../../profile?user=' . htmlspecialchars($_SESSION['username']) . '&update=failEmptyField');
+  exit;
+}
+
 try {
   $sql = "SELECT COUNT(*) FROM user WHERE username = '" . $username . "' AND id != '" . $_SESSION['user_id'] . "' LIMIT 1";
   $stmt = $conn->prepare($sql);
