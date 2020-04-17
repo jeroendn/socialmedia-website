@@ -7,7 +7,7 @@ if (isset($_SESSION['user_id'])) {
 ?>
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <title>Posting-it - Login</title>
     <meta name="description" content=""/>

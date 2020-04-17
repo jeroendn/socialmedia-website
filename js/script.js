@@ -100,11 +100,18 @@ $(document).ready(function() {
     });
   });
 
-  // set post img to equal height
+  // set feed posts to equal height
   $('#feed .post').css('height', $('#feed .post').outerWidth());
 
   $(window).resize(function() {
     $('#feed .post').css('height', $('#feed .post').outerWidth());
+  });
+
+  // set profile posts to equal height
+  $('#profile .post').css('height', $('#profile .post').outerWidth());
+
+  $(window).resize(function() {
+    $('#profile .post').css('height', $('#profile .post').outerWidth());
   });
 
   // profile img upload

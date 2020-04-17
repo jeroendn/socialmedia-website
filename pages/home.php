@@ -3,7 +3,7 @@ include_once __DIR__ . '../../php/session.php';
 ?>
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <title>Posting-it - Feed</title>
     <meta name="description" content=""/>
@@ -17,18 +17,19 @@ include_once __DIR__ . '../../php/session.php';
       <section class="container mt-5 pb-3">
         <?php
 
-        for ($i=0; $i < 5; $i++) {
+        for ($i=0; $i < 5; $i++) { // !!! REMOVE THIS
 
 
         // get posts from db
         try {
-          $sql = "SELECT *, post.id as post_id
+          $sql = "SELECT user.username, post.text, post.id as post_id
           FROM post
           INNER JOIN follow ON post.user_id=follow.followed_user_id
           INNER JOIN user ON follow.followed_user_id=user.id
           WHERE
           follow.user_id = '" . $_SESSION['user_id'] . "' AND
-          post.deleted = 0
+          post.deleted = 0 AND
+          post.id NOT IN (SELECT post_id FROM post INNER JOIN seen ON post.id=seen.post_id WHERE seen.user_id = 18)
           ORDER BY post.date DESC LIMIT 100";
           $stmt = $conn->prepare($sql);
           $stmt->execute();
@@ -38,6 +39,18 @@ include_once __DIR__ . '../../php/session.php';
           sql_error($e);
         }
 
+        // SELECT actor.*, count(film_actor.actor_id)
+        // FROM `actor`
+        // INNER JOIN film_actor
+        // ON actor.actor_id = film_actor.actor_id
+        // WHERE actor.actor_id  IN (select actor_id from film_actor)
+        // GROUP BY actor.actor_id
+
+        // SELECT user.username, post.text, post.id as post_id FROM
+        // post INNER JOIN follow ON post.user_id=follow.followed_user_id
+        // INNER JOIN user ON follow.followed_user_id=user.id WHERE follow.user_id = 18
+        // AND post.deleted = 0 AND post.id NOT IN (SELECT post_id FROM post INNER JOIN seen ON post.id=seen.post_id WHERE seen.user_id = 18)
+        // ORDER BY post.date DESC LIMIT 100
 
         foreach ($posts as $post) {
           // get likes from db
@@ -48,19 +61,7 @@ include_once __DIR__ . '../../php/session.php';
           $stmt = $conn->prepare($sql);
           $stmt->execute();
           $likes = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-          // check if post has been seen
-          $sql = "SELECT COUNT(*)
-          FROM post
-          INNER JOIN seen ON post.id=seen.post_id
-          WHERE
-          seen.post_id = '" . $post['post_id'] . "' AND
-          seen.user_id = '" . $_SESSION['user_id'] . "' ";
-          $stmt = $conn->prepare($sql);
-          $stmt->execute();
-          $seen_check = $stmt->fetchColumn();
-
-          if ($seen_check <= 0) { ?>
+          ?>
           <div class="post">
             <img src="php/get_profile_icon.php?user=<?php echo htmlspecialchars($post['username']); ?>" />
             <p class="user"><?php echo htmlspecialchars($post['username']); ?></p>
@@ -69,11 +70,10 @@ include_once __DIR__ . '../../php/session.php';
             <input type="hidden" name="post_id" value="<?php echo htmlspecialchars($post['post_id']); ?>">
           </div>
           <?php
-          }
         }
 
 
-      }
+      } // !!! REMOVE THIS
         ?>
 
       </section>

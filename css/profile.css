@@ -1,10 +1,10 @@
-.profile-header {
+#profile .profile-header {
   border-bottom: 1px solid #f7f7f7;
   display: flex;
   flex-flow: row wrap;
 }
 
-.profile-header .profile-img {
+#profile .profile-header .profile-img {
   flex: 0 0 30%;
   max-width: 30%;
   display: flex;
@@ -14,7 +14,7 @@
   position: relative;
 }
 
-.profile-header .profile-img img {
+#profile .profile-header .profile-img img {
   width: 100%;
   max-width: 100%;
   background: #f7f7f7;
@@ -26,11 +26,11 @@
   -webkit-user-drag: none;
 }
 
-.profile-header .profile-img input[type="file"] {
+#profile .profile-header .profile-img input[type="file"] {
   display: none;
 }
 
-.profile-header .profile-img .overlay {
+#profile .profile-header .profile-img .overlay {
   visibility: hidden;
   opacity: 0;
   position: absolute;
@@ -43,7 +43,7 @@
   transition: 200ms ease;
 }
 
-.profile-header .profile-img .overlay:before {
+#profile .profile-header .profile-img .overlay:before {
   content: '';
   position: absolute;
   width: 100%;
@@ -55,12 +55,12 @@
   background-repeat: no-repeat;
 }
 
-.profile-header .profile-img:hover .overlay {
+#profile .profile-header .profile-img:hover .overlay {
   visibility: visible;
   opacity: 1;
 }
 
-.profile-header .profile-info {
+#profile .profile-header .profile-info {
   flex: 0 0 70%;
   max-width: 70%;
   display: flex;
@@ -70,42 +70,77 @@
   max-height: 230px;
 }
 
-.profile-header .profile-info h4 {
+#profile .profile-header .profile-info h4 {
   flex: 0 0 60%;
   max-width: 60%;
   margin-bottom: 0;
 }
 
-.profile-header .profile-info button {
+#profile .profile-header .profile-info button {
   flex: 0 0 40%;
   max-width: 40%;
   height: fit-content;
 }
 
-.profile-header .profile-info p {
+#profile .profile-header .profile-info p {
   flex: 0 0 100%;
   max-width: 100%;
   margin-bottom: 0;
 }
 
-.profile-header .profile-info textarea {
+#profile .profile-header .profile-info textarea {
   height: 100%;
   max-height: calc(100% - 50px);
   resize: none;
 }
 
-.profile-header .admin-buttons {
+#profile .profile-header .admin-buttons {
   flex: 0 0 100%;
   max-width: 100%;
   display: flex;
   justify-content: space-around;
 }
 
-.profile-header .admin-buttons button.btn {
+#profile .profile-header .admin-buttons button.btn {
   margin: 10px;
 }
 
-.profile-posts {
+#profile .profile-posts {
   display: flex;
   flex-flow: row wrap;
+}
+
+#profile .profile-posts .post {
+  width: 50%;
+}
+
+@media screen and (max-width: 600px) {
+  #profile .profile-posts .post {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  #profile .profile-posts .post {
+    padding: 50px;
+  }
+}
+
+@media screen and (min-width: 600px) and (max-width: 840px) {
+  #profile .profile-posts .post p.message {
+    font-size: 15px;
+  }
+}
+
+#profile .profile-posts .post p.message {
+  font-size: 18px;
+}
+
+#profile .profile-posts .post p.like {
+  font-size: 17px;
+  left: 50px;
+}
+
+#profile .profile-posts .post p.like:before {
+  font-size: 30px;
 }

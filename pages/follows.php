@@ -3,7 +3,7 @@ include_once __DIR__ . '../../php/session.php';
 ?>
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <title>Posting-it - Following</title>
     <meta name="description" content=""/>

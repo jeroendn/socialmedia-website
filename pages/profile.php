@@ -40,7 +40,7 @@ if ($user_check > 0) {
 ?>
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <title>Posting-it - Profile</title>
     <meta name="description" content=""/>
@@ -90,13 +90,40 @@ if ($user_check > 0) {
       if($is_owner) { ?> </form> <?php } else { ?> </section> <?php } ?>
 
       <section class="container mt-3 mb-3 profile-posts">
-        <?php
-        if ($user_check > 0) {
-          ?>
-          <p></p>
-          <?php
-        }
-        ?>
+        <?php if ($user_check > 0) {
+          try {
+            $sql = "SELECT user.username, post.text, post.id as post_id
+            FROM post
+            INNER JOIN user ON post.user_id=user.id
+            WHERE user.id = '" . $user_data[0]['id'] . "' AND post.deleted = 0
+            ORDER BY post.date DESC";
+            $stmt = $conn->prepare($sql);
+            $stmt->execute();
+            $posts = $stmt->fetchAll(PDO::FETCH_ASSOC);
+          }
+          catch(Exception $e) {
+            sql_error($e);
+          }
+
+          foreach ($posts as $post) {
+            // get likes from db
+            $sql = "SELECT COUNT(likes.user_id)  as likes
+            FROM post
+            INNER JOIN likes ON post.id=likes.post_id
+            WHERE post.id = '" . $post['post_id'] . "' ";
+            $stmt = $conn->prepare($sql);
+            $stmt->execute();
+            $likes = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            ?>
+
+            <div class="post">
+              <img src="php/get_profile_icon.php?user=<?php echo htmlspecialchars($post['username']); ?>" />
+              <p class="message"><?php echo htmlspecialchars($post['text']); ?></p>
+              <p class="like"><?php echo htmlspecialchars($likes[0]['likes']); ?></p>
+              <input type="hidden" name="post_id" value="<?php echo htmlspecialchars($post['post_id']); ?>">
+            </div>
+
+        <?php } } ?>
       </section>
     </main>
 

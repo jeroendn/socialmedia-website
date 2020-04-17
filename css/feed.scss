@@ -1,6 +1,7 @@
 @import 'var.scss';
 
-#feed {
+// .post is also used as a base for profile post styling
+#feed, #profile .profile-posts {
   section:first-child {
     // background-image: url('../design/sticky_note_stack.png');
     border-bottom: 1px solid $light;
@@ -53,6 +54,7 @@
       object-fit: cover;
       box-shadow: 0 0 5px 0px black;
       transform: rotate(-15deg);
+      background: $dark2;
     }
 
     p.user {
