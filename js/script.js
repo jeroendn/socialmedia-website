@@ -127,4 +127,18 @@ $(document).ready(function() {
   // hide preload spinner
   $('#preloader').fadeOut(500);
 
+  // delete post from user
+  $('#profile button.delete').on('click', function () {
+    let post_id = $(this).closest('.post').find('input[type="hidden"]').val();
+
+    $.ajax({
+      url: "php/ajax/delete_post.php",
+      type: "post",
+      data: { post_id:post_id }
+    })
+    .done(() => {
+      $(this).closest('.post').fadeOut();
+    });
+  });
+
 });

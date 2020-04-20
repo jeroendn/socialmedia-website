@@ -16,10 +16,6 @@ include_once __DIR__ . '../../php/session.php';
     <main id="feed" class="page-content">
       <section class="container mt-5 pb-3">
         <?php
-
-        for ($i=0; $i < 5; $i++) { // !!! REMOVE THIS
-
-
         // get posts from db
         try {
           $sql = "SELECT user.username, post.text, post.id as post_id
@@ -29,7 +25,7 @@ include_once __DIR__ . '../../php/session.php';
           WHERE
           follow.user_id = '" . $_SESSION['user_id'] . "' AND
           post.deleted = 0 AND
-          post.id NOT IN (SELECT post_id FROM post INNER JOIN seen ON post.id=seen.post_id WHERE seen.user_id = 18)
+          post.id NOT IN (SELECT post_id FROM post INNER JOIN seen ON post.id=seen.post_id WHERE seen.user_id = '" . $_SESSION['user_id'] . "')
           ORDER BY post.date DESC LIMIT 100";
           $stmt = $conn->prepare($sql);
           $stmt->execute();
@@ -39,22 +35,10 @@ include_once __DIR__ . '../../php/session.php';
           sql_error($e);
         }
 
-        // SELECT actor.*, count(film_actor.actor_id)
-        // FROM `actor`
-        // INNER JOIN film_actor
-        // ON actor.actor_id = film_actor.actor_id
-        // WHERE actor.actor_id  IN (select actor_id from film_actor)
-        // GROUP BY actor.actor_id
-
-        // SELECT user.username, post.text, post.id as post_id FROM
-        // post INNER JOIN follow ON post.user_id=follow.followed_user_id
-        // INNER JOIN user ON follow.followed_user_id=user.id WHERE follow.user_id = 18
-        // AND post.deleted = 0 AND post.id NOT IN (SELECT post_id FROM post INNER JOIN seen ON post.id=seen.post_id WHERE seen.user_id = 18)
-        // ORDER BY post.date DESC LIMIT 100
 
         foreach ($posts as $post) {
           // get likes from db
-          $sql = "SELECT COUNT(likes.user_id)  as likes
+          $sql = "SELECT COUNT(likes.user_id) as likes
           FROM post
           INNER JOIN likes ON post.id=likes.post_id
           WHERE post.id = '" . $post['post_id'] . "' ";
@@ -71,9 +55,6 @@ include_once __DIR__ . '../../php/session.php';
           </div>
           <?php
         }
-
-
-      } // !!! REMOVE THIS
         ?>
 
       </section>
@@ -87,3 +68,17 @@ include_once __DIR__ . '../../php/session.php';
     <?php include_once __DIR__ . '../../php/js_include.php'; ?>
   </body>
 </html>
+
+
+<!-- SELECT user.username, post.text, post.id as post_id, COUNT(likes.post_id) as likes
+          FROM post
+          INNER JOIN follow ON post.user_id=follow.followed_user_id
+          INNER JOIN user ON follow.followed_user_id=user.id
+          INNER JOIN likes ON post_id=likes.post_id
+          WHERE
+          follow.user_id = 18 AND
+          post.deleted = 0 AND
+          post.id NOT IN (SELECT post_id FROM post INNER JOIN seen ON post.id=seen.post_id WHERE seen.user_id = 18) AND
+          post_id IN (SELECT user_id FROM likes WHERE likes.post_id = post_id)
+          GROUP BY post.id
+          ORDER BY post.date DESC LIMIT 100 -->

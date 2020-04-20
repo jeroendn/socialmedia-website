@@ -52,7 +52,14 @@
   object-fit: cover;
   box-shadow: 0 0 5px 0px black;
   transform: rotate(-15deg);
+  transition: transform 250ms ease-in-out;
   background: #444;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+#feed .post img:hover, #profile .profile-posts .post img:hover {
+  transform: none;
 }
 
 #feed .post p.user, #profile .profile-posts .post p.user {

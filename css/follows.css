@@ -12,6 +12,8 @@
   margin: 10px 0;
   background: #444;
   cursor: pointer;
+  user-select: none;
+  -webkit-user-drag: none;
 }
 
 #follows .card a {
