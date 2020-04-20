@@ -1,0 +1,43 @@
+#write-post {
+  position: fixed;
+  width: 100%;
+  z-index: 5;
+  transition: all 500ms ease;
+}
+
+#write-post > .container {
+  background: #444;
+  border-radius: 0 0 5px 5px;
+  border: 1px solid #f7f7f7;
+  border-top: none;
+  transition: box-shadow 200ms ease;
+}
+
+#write-post #open-write-post {
+  background: #444;
+  display: block;
+  position: absolute;
+  left: 30%;
+  border-radius: 0 0 5px 5px;
+  box-shadow: 0 0 2px #f7f7f7;
+}
+
+#write-post #open-write-post img {
+  width: 30px;
+  padding: 5px 3px 3px 3px;
+  transition: transform 250ms ease, top 250ms ease;
+  position: relative;
+  top: 0;
+}
+
+#write-post #open-write-post img:hover {
+  top: 4px;
+}
+
+#write-post.open > .container {
+  box-shadow: 0px 40px 30px 20px rgba(0, 0, 0, 0.1);
+}
+
+#write-post.open img {
+  transform: rotateZ(180deg);
+}

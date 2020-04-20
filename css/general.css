@@ -93,3 +93,9 @@ button.btn-follow.active, button.btn-unfollow.active {
 .btn:hover {
   box-shadow: inset 0 0 5px 0px #333;
 }
+
+.btn.btn-unfollow {
+  background: #fff !important;
+  border-color: #fff !important;
+  color: #0062cc !important;
+}

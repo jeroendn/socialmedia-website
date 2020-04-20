@@ -35,6 +35,18 @@ include_once __DIR__ . '../../php/session.php';
           sql_error($e);
         }
 
+        // SELECT user.username, post.text, post.id as post_id, COUNT(likes.post_id) as likes
+        //           FROM post
+        //           INNER JOIN follow ON post.user_id=follow.followed_user_id
+        //           INNER JOIN user ON follow.followed_user_id=user.id
+        //           INNER JOIN likes ON post_id=likes.post_id
+        //           WHERE
+        //           follow.user_id = 18 AND
+        //           post.deleted = 0 AND
+        //           post.id NOT IN (SELECT post_id FROM post INNER JOIN seen ON post.id=seen.post_id WHERE seen.user_id = 18) AND
+        //           post_id IN (SELECT user_id FROM likes WHERE likes.post_id = post_id)
+        //           GROUP BY post.id
+        //           ORDER BY post.date DESC LIMIT 100
 
         foreach ($posts as $post) {
           // get likes from db
@@ -68,17 +80,3 @@ include_once __DIR__ . '../../php/session.php';
     <?php include_once __DIR__ . '../../php/js_include.php'; ?>
   </body>
 </html>
-
-
-<!-- SELECT user.username, post.text, post.id as post_id, COUNT(likes.post_id) as likes
-          FROM post
-          INNER JOIN follow ON post.user_id=follow.followed_user_id
-          INNER JOIN user ON follow.followed_user_id=user.id
-          INNER JOIN likes ON post_id=likes.post_id
-          WHERE
-          follow.user_id = 18 AND
-          post.deleted = 0 AND
-          post.id NOT IN (SELECT post_id FROM post INNER JOIN seen ON post.id=seen.post_id WHERE seen.user_id = 18) AND
-          post_id IN (SELECT user_id FROM likes WHERE likes.post_id = post_id)
-          GROUP BY post.id
-          ORDER BY post.date DESC LIMIT 100 -->

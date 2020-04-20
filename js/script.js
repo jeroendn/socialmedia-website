@@ -141,4 +141,19 @@ $(document).ready(function() {
     });
   });
 
+  // open write post menu
+  $('#write-post').css('top', -$('#write-post').height());
+
+  $('#open-write-post').on('click', function () {
+    let elem = $(this).closest('#write-post');
+    elem.toggleClass('open');
+
+    if (elem.hasClass('open')) {
+      elem.css('top', '0');
+    }
+    else {
+      elem.css('top', -elem.height());
+    }
+  });
+
 });
