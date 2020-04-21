@@ -11,6 +11,15 @@
   border: 1px solid #f7f7f7;
   border-top: none;
   transition: box-shadow 200ms ease;
+  margin-bottom: 1px;
+}
+
+#write-post > .container textarea {
+  min-height: 100px;
+}
+
+#write-post > .container textarea::-webkit-scrollbar-track, #write-post > .container textarea::-webkit-scrollbar-thumb {
+  display: none;
 }
 
 #write-post #open-write-post {
@@ -20,6 +29,7 @@
   left: 30%;
   border-radius: 0 0 5px 5px;
   box-shadow: 0 0 2px #f7f7f7;
+  margin-top: -1px;
 }
 
 #write-post #open-write-post img {
@@ -28,6 +38,8 @@
   transition: transform 250ms ease, top 250ms ease;
   position: relative;
   top: 0;
+  user-select: none;
+  -webkit-user-drag: none;
 }
 
 #write-post #open-write-post img:hover {

@@ -1,3 +1,64 @@
+#follows .follow-toggle {
+  cursor: pointer;
+  user-select: none;
+  font-weight: bold;
+  border-radius: 5px;
+  width: max-content;
+  margin: auto;
+  padding: 0 7px;
+  display: flex;
+  position: relative;
+  transition: left 200ms ease;
+  left: 0;
+}
+
+#follows .follow-toggle .text-first, #follows .follow-toggle .text-last {
+  position: relative;
+  transition: left 200ms ease;
+  left: 0;
+}
+
+#follows .follow-toggle .toggle-icon {
+  transition: transform 200ms ease;
+  display: block;
+  padding: 0 5px;
+}
+
+#follows .follow-toggle .toggle-icon:before {
+  content: '\f2f1';
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 600;
+}
+
+#follows .follow-toggle:hover .toggle-icon {
+  transform: rotateZ(180deg);
+}
+
+#follows .follow-toggle.active {
+  left: -20px;
+}
+
+#follows .follow-toggle.active .text-first {
+  left: 75px;
+}
+
+#follows .follow-toggle.active .text-last {
+  left: -55px;
+}
+
+#follows .follow-you, #follows .you-follow {
+  visibility: hidden;
+  opacity: 0;
+  height: 0;
+  transition: opacity 500ms ease;
+}
+
+#follows .follow-you.active, #follows .you-follow.active {
+  visibility: visible;
+  opacity: 1;
+  height: auto;
+}
+
 #follows .card {
   flex-flow: row wrap;
   align-items: center;

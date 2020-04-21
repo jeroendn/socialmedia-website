@@ -156,4 +156,18 @@ $(document).ready(function() {
     }
   });
 
+  // follow tab toggle
+  $('#follows .follow-toggle').on('click', function () {
+    if ($(this).parent().find('.follow-you').hasClass('active')) {
+      $(this).parent().find('.follow-you').removeClass('active');
+      $(this).parent().find('.you-follow').addClass('active');
+      $(this).addClass('active');
+    }
+    else {
+      $(this).parent().find('.follow-you').addClass('active');
+      $(this).parent().find('.you-follow').removeClass('active');
+      $(this).removeClass('active');
+    }
+  });
+
 });

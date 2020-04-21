@@ -1,6 +1,69 @@
 @import 'var.scss';
 
 #follows {
+  .follow-toggle {
+    cursor: pointer;
+    user-select: none;
+    font-weight: bold;
+    border-radius: 5px;
+    width: max-content;
+    margin: auto;
+    padding: 0 7px;
+    display: flex;
+    position: relative;
+    transition: left 200ms ease;
+    left: 0;
+
+    .text-first, .text-last {
+      position: relative;
+      transition: left 200ms ease;
+      left: 0;
+    }
+
+    .toggle-icon {
+      transition: transform 200ms ease;
+      display: block;
+      padding: 0 5px;
+
+      &:before {
+        content: '\f2f1';
+        font-family: 'Font Awesome 5 Free';
+        font-weight: 600;
+      }
+    }
+
+    &:hover {
+      .toggle-icon {
+        transform: rotateZ(180deg);
+      }
+    }
+
+    &.active {
+      left: -20px;
+
+      .text-first {
+        left: 75px;
+      }
+
+      .text-last {
+        left: -55px;
+      }
+    }
+  }
+
+  .follow-you, .you-follow {
+    visibility: hidden;
+    opacity: 0;
+    height: 0;
+    transition: opacity 500ms ease;
+
+    &.active {
+      visibility: visible;
+      opacity: 1;
+      height: auto;
+    }
+  }
+
   .card {
     flex-flow: row wrap;
     align-items: center;

@@ -15,7 +15,9 @@ include_once __DIR__ . '../../php/session.php';
 
     <main id="follows" class="page-content">
       <section class="container mt-3">
-        <h4 class="text-center mb-4">People you follow</h4>
+        <h4 class="text-center">People who</h4>
+        <p class="follow-toggle text-center mb-4"><span class="text-first">follow</span><span class="toggle-icon"></span><span class="text-last">you</span></p>
+        <div class=" follow-you active">
         <?php
         try {
           $sql = "SELECT * FROM follow INNER JOIN user ON follow.followed_user_id = user.id WHERE follow.user_id = '" . $_SESSION['user_id'] . "' ";
@@ -36,6 +38,10 @@ include_once __DIR__ . '../../php/session.php';
         <?php
         }
         ?>
+        </div>
+        <div class="you-follow">
+          test text
+        </div>
         <h4 class="text-center mt-4 mb-4">Suggestions to follow</h4>
         <?php
         // select random users that already have followers and user doesn't follow

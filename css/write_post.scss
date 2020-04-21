@@ -12,6 +12,15 @@
     border: 1px solid $light;
     border-top: none;
     transition: box-shadow 200ms ease;
+    margin-bottom: 1px;
+
+    textarea {
+      min-height: 100px;
+
+      &::-webkit-scrollbar-track, &::-webkit-scrollbar-thumb {
+        display: none;
+      }
+    }
   }
 
   #open-write-post {
@@ -21,6 +30,7 @@
     left: 30%;
     border-radius: 0 0 5px 5px;
     box-shadow: 0 0 2px $light;
+    margin-top: -1px;
 
     img {
       width: 30px;
@@ -28,6 +38,8 @@
       transition: transform 250ms ease, top 250ms ease;
       position: relative;
       top: 0;
+      user-select: none;
+      -webkit-user-drag: none;
 
       &:hover {
         top: 4px;
