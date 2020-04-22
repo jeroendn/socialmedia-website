@@ -1,9 +1,9 @@
 <?php
 session_start();
 include_once '../../php/dbconnection.php';
+include_once '../../php/functions.php';
 
 $message = substr($_POST['message'], 0, 255);
-echo $message;
 
 if ($message != '') {
   try {
@@ -18,4 +18,4 @@ if ($message != '') {
   }
 }
 
-header("Location: ../../home");
+header("Location: ../../profile?user=" . $_SESSION['username']);

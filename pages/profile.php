@@ -116,11 +116,11 @@ if ($user_check > 0) {
             $likes = $stmt->fetchAll(PDO::FETCH_ASSOC);
             ?>
 
-            <div class="post">
+            <div class="post show">
               <img src="php/get_profile_icon.php?user=<?php echo htmlspecialchars($post['username']); ?>" />
               <p class="message"><?php echo htmlspecialchars($post['text']); ?></p>
               <p class="like"><?php echo htmlspecialchars($likes[0]['likes']); ?></p>
-              <button class="delete"><i class="fas fa-times-circle"></i></button>
+              <?php if($is_owner) { ?><button class="delete"><i class="fas fa-times-circle"></i></button><?php } ?>
               <input type="hidden" name="post_id" value="<?php echo htmlspecialchars($post['post_id']); ?>">
             </div>
 

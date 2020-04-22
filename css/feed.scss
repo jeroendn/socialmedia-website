@@ -8,19 +8,27 @@
   }
 
   .post {
-    // height: 720px;
     background-image: url('../design/sticky_note_pink.png');
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
     padding: 90px;
-    display: flex;
     flex-flow: row wrap;
     align-items: center;
     position: relative;
+    display: flex;
+    transition: opacity 500ms ease;
+    left: 0;
 
     @media screen and (max-width: $breakpoint) {
       padding: 10%;
+    }
+
+    &:not(.show) {
+      visibility: hidden;
+      opacity: 0;
+      height: 0 !important;
+      padding: 0;
     }
 
     &:nth-child(3n-2) {

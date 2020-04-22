@@ -25,7 +25,8 @@ include_once __DIR__ . '../../php/session.php';
           WHERE
           follow.user_id = '" . $_SESSION['user_id'] . "' AND
           post.deleted = 0 AND
-          post.id NOT IN (SELECT post_id FROM post INNER JOIN seen ON post.id=seen.post_id WHERE seen.user_id = '" . $_SESSION['user_id'] . "')
+          post.id NOT IN (SELECT post_id FROM post INNER JOIN seen ON post.id=seen.post_id WHERE seen.user_id = '" . $_SESSION['user_id'] . "') AND
+          post.id NOT IN (SELECT post_id FROM post INNER JOIN likes ON post.id=likes.post_id WHERE likes.user_id = '" . $_SESSION['user_id'] . "')
           ORDER BY post.date DESC LIMIT 100";
           $stmt = $conn->prepare($sql);
           $stmt->execute();
