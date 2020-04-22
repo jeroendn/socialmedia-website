@@ -50,6 +50,16 @@ button.btn-follow.active, button.btn-unfollow.active {
   display: block;
 }
 
+a {
+  color: #e0a800;
+  transition: color 200ms ease;
+}
+
+a:hover {
+  text-decoration: none;
+  color: #f00;
+}
+
 .container {
   max-width: 800px;
   color: #f7f7f7;

@@ -82,6 +82,7 @@ if ($user_check > 0) {
         <?php if($is_owner) { ?>
         <div class="admin-buttons">
           <button class="btn btn-warning" task="update">Update profile</button>
+          <a class="btn btn-warning" href="logout">Logout</a>
         </div>
         <?php }
         }

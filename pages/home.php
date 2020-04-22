@@ -69,6 +69,9 @@ include_once __DIR__ . '../../php/session.php';
           <?php
         }
         ?>
+        <div class="post">
+          <p class="message">No posts to show.<br>You have seen everything!<br>Or <a href="follows">start</a> following some people.</p>
+        </div>
 
       </section>
 

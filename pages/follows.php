@@ -63,9 +63,8 @@ include_once __DIR__ . '../../php/session.php';
         </div>
         <h4 class="text-center mt-4 mb-4">Suggestions to follow</h4>
         <?php
-        // select random users that already have followers and user doesn't follow
         try {
-          $sql = "SELECT * FROM user INNER JOIN follow ON user.id = follow.followed_user_id WHERE follow.user_id != '" . $_SESSION['user_id'] . "' AND follow.followed_user_id != '" . $_SESSION['user_id'] . "' ORDER BY rand() LIMIT 10";
+          $sql = "SELECT * FROM user WHERE id != '" . $_SESSION['user_id'] . "' ORDER BY rand() LIMIT 10";
           $stmt = $conn->prepare($sql);
           $stmt->execute();
           $user_data = $stmt->fetchAll(PDO::FETCH_ASSOC);

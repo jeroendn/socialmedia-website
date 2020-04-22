@@ -58,7 +58,7 @@ $(document).ready(function() {
     }
   });
 
-  $('#feed .post').draggable(
+  $('#feed .post:not(:last-child)').draggable(
     {
     axis: 'x',
     start: function(e, ui) {

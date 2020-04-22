@@ -101,7 +101,7 @@
   justify-content: space-around;
 }
 
-#profile .profile-header .admin-buttons button.btn {
+#profile .profile-header .admin-buttons .btn {
   margin: 10px;
 }
 

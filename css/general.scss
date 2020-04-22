@@ -26,8 +26,6 @@ html, body {
   background: rgba(255, 193, 7, .5);
 }
 
-
-
 #preloader {
   position: fixed;
   width: 100vw;
@@ -51,8 +49,17 @@ button.btn-follow, button.btn-unfollow {
   }
 }
 
-// bootstrap overwrites
+a {
+  color: #e0a800;
+  transition: color 200ms ease;
 
+  &:hover {
+    text-decoration: none;
+    color: #f00;
+  }
+}
+
+// bootstrap overwrites
 .container {
   max-width: 800px;
   color: $light;
