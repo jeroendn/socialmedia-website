@@ -60,7 +60,7 @@ include_once __DIR__ . '../../php/session.php';
           $likes = $stmt->fetchAll(PDO::FETCH_ASSOC);
           ?>
           <div class="post">
-            <img src="php/get_profile_icon.php?user=<?php echo htmlspecialchars($post['username']); ?>" />
+            <a href="<?php echo 'profile?user=' . $post['username']; ?>"><img src="php/get_profile_icon.php?user=<?php echo htmlspecialchars($post['username']); ?>" /></a>
             <p class="user"><?php echo htmlspecialchars($post['username']); ?></p>
             <p class="message"><?php echo htmlspecialchars($post['text']); ?></p>
             <p class="like"><?php echo htmlspecialchars($likes[0]['likes']); ?></p>

@@ -35,15 +35,15 @@
 }
 
 #follows .follow-toggle.active {
-  left: -20px;
+  left: 20px;
 }
 
 #follows .follow-toggle.active .text-first {
-  left: 75px;
+  left: 55px;
 }
 
 #follows .follow-toggle.active .text-last {
-  left: -55px;
+  left: -75px;
 }
 
 #follows .follow-you, #follows .you-follow {

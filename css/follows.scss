@@ -39,14 +39,14 @@
     }
 
     &.active {
-      left: -20px;
+      left: 20px;
 
       .text-first {
-        left: 75px;
+        left: 55px;
       }
 
       .text-last {
-        left: -55px;
+        left: -75px;
       }
     }
   }

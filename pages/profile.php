@@ -19,6 +19,8 @@ else {
   header('location: home');
 }
 
+$is_owner = false;
+
 // get user data if the user exists
 if ($user_check > 0) {
   try {
@@ -32,7 +34,6 @@ if ($user_check > 0) {
   }
 
   // check if current user is the owner of the page
-  $is_owner = false;
   if ($_SESSION['user_id'] == $user_data[0]['id']) {
     $is_owner = true;
   }
@@ -42,7 +43,7 @@ if ($user_check > 0) {
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Posting-it - Profile</title>
+    <title>Posting-it - <?php echo $username; ?></title>
     <meta name="description" content=""/>
     <?php include_once __DIR__ . '../../php/head.php'; ?>
   </head>
