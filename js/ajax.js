@@ -114,4 +114,43 @@ $(document).ready(function() {
     });
   });
 
+  $('#feed .post:not(:last-child)').draggable(
+    {
+    axis: 'x',
+    start: function(e, ui) {
+      this.previousPosition = ui.position;
+    },
+    stop: function(e, ui) {
+      $(this).css('left','0');
+
+      var distance = ui.position.left - this.previousPosition.left;
+
+      let post_id = $(this).find('input[type="hidden"]').val();
+
+      if (distance > 100) {
+        $.ajax({
+          url: "php/ajax/like_post.php",
+          type: "post",
+          data: { post_id:post_id }
+        })
+        .done(() => {
+          $(this).removeClass('show');
+          $(this).next().addClass('show');
+        });
+      }
+      else if (distance < -100) {
+        $.ajax({
+          url: "php/ajax/seen_post.php",
+          type: "post",
+          data: { post_id:post_id }
+        })
+        .done(() => {
+          $(this).removeClass('show');
+          $(this).next().addClass('show');
+        });
+      }
+
+    }
+  });
+
 });

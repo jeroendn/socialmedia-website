@@ -30,7 +30,7 @@ include_once __DIR__ . '../../php/session.php';
         }
 
         foreach ($user_data as $user) {?>
-          <div class="card mb-2 pr-3 pl-3">
+          <div class="card mb-2 pr-3 pl-3 pt-1 pb-1">
             <img src="php/get_profile_icon.php?user=<?php echo htmlspecialchars($user['username']); ?>" />
             <a href="<?php echo 'profile?user=' . htmlspecialchars($user['username']); ?>"><?php echo htmlspecialchars($user['username']); ?></a>
             <?php $user_id = $user['id']; $username = $user['username']; include __DIR__ . '../../php/template_parts/follow_btn.php'; ?>
@@ -52,7 +52,7 @@ include_once __DIR__ . '../../php/session.php';
         }
 
         foreach ($user_data as $user) {?>
-          <div class="card mb-2 pr-3 pl-3">
+          <div class="card mb-2 pr-3 pl-3 pt-1 pb-1">
             <img src="php/get_profile_icon.php?user=<?php echo htmlspecialchars($user['username']); ?>" />
             <a href="<?php echo 'profile?user=' . htmlspecialchars($user['username']); ?>"><?php echo htmlspecialchars($user['username']); ?></a>
             <?php $user_id = $user['id']; $username = $user['username']; include __DIR__ . '../../php/template_parts/follow_btn.php'; ?>
@@ -74,7 +74,7 @@ include_once __DIR__ . '../../php/session.php';
         }
 
         foreach ($user_data as $user) {?>
-          <div class="card mb-2 pr-3 pl-3">
+          <div class="card mb-2 pr-3 pl-3 pt-1 pb-1">
             <img src="php/get_profile_icon.php?user=<?php echo htmlspecialchars($user['username']); ?>" />
             <a href="<?php echo 'profile?user=' . htmlspecialchars($user['username']); ?>"><?php echo htmlspecialchars($user['username']); ?></a>
             <?php $user_id = $user['id']; $username = $user['username']; include __DIR__ . '../../php/template_parts/follow_btn.php'; ?>

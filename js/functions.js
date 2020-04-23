@@ -1,3 +1,3 @@
-function empty() {
+function get_comments() {
 
 };
