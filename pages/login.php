@@ -19,7 +19,8 @@ if (isset($_SESSION['user_id'])) {
 
     <main id="login" class="page-content">
 			<div class="container card mt-5 pt-3 pr-5 pl-5">
-				<p class="text-center font-weight-bold">Create your own Posting-it account and start sharing and interacting!</p>
+				<h2 class="text-center font-weight-bold mb-1">Welcome on the Posting-it platform!</h2>
+				<p class="text-center font-weight-bold">Create your very own account and start sharing and interacting!</p>
 			</div>
       <div class="container card mt-4 p-5">
 

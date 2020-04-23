@@ -51,12 +51,16 @@ button.btn-follow, button.btn-unfollow {
 
 a {
   color: $accent1;
-  transition: color 200ms ease;
+  transition: color 200ms ease, text-decoration 200ms ease;
 
   &:hover {
-    text-decoration: none;
-    color: $accent2;
+    color: $light;
   }
+}
+
+// login page
+#login .container {
+  box-shadow: inset 0 0 10px #000;
 }
 
 // bootstrap overwrites

@@ -10,4 +10,24 @@
 </footer>
 <?php } ?>
 
-<footer id="secondary-footer"></footer>
+<footer id="secondary-footer" class="mt-5">
+  <div class="footer-wrap container pt-3 pb-3">
+    <div>
+      <h5>Account</h5>
+      <?php if (isset($_SESSION['username'])) { ?><a href="<?php echo 'profile?user=' . htmlspecialchars($_SESSION['username']); ?>">profile</a><?php } else { ?>
+      <a href="login">Create account</a><?php } ?>
+      <a href="home">feed</a>
+      <a href="follows">following</a>
+    </div>
+    <div>
+      <h5>Support</h5>
+      <a href="help">help</a>
+      <a href="#!">Close account</a>
+      <a href="#!">About us</a>
+    </div>
+  </div>
+
+  <div id="bottom-bar">
+    <p>Posting-it&copy; 2020</p>
+  </div>
+</footer>

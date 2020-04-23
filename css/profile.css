@@ -103,7 +103,7 @@
 }
 
 #profile .profile-header .admin-buttons .btn {
-  margin: 2%;
+  margin: 10px 2%;
   flex: 0 0 46%;
   max-width: 46%;
 }

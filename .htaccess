@@ -16,6 +16,7 @@ RewriteRule ^$ pages/home.php
 RewriteRule ^login$ pages/login.php
 RewriteRule ^logout$ php/ajax/logout_submit.php
 RewriteRule ^home$ pages/home.php
+RewriteRule ^feed$ pages/home.php
 RewriteRule ^profile$ pages/profile.php
 RewriteRule ^follows$ pages/follows.php
 

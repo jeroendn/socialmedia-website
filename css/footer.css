@@ -44,6 +44,37 @@
 }
 
 #secondary-footer {
-  height: 100px;
+  background-color: #444;
   width: 100%;
+  box-shadow: 0 0 10px #000;
+}
+
+#secondary-footer .footer-wrap > div {
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+}
+
+#secondary-footer .footer-wrap > div:not(:last-child) {
+  border-bottom: 1px solid #f7f7f7;
+}
+
+#secondary-footer .footer-wrap > div h5 {
+  margin-bottom: 0;
+}
+
+#secondary-footer .footer-wrap > div a {
+  font-size: 14px;
+  display: block;
+}
+
+#secondary-footer #bottom-bar {
+  background-color: #333;
+  padding-bottom: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#secondary-footer #bottom-bar p {
+  color: #f7f7f7;
 }

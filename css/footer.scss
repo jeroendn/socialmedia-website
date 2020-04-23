@@ -46,6 +46,39 @@
 }
 
 #secondary-footer {
-  height: 100px;
+  background-color: $dark2;
   width: 100%;
+  box-shadow: 0 0 10px #000;
+
+  .footer-wrap {
+    > div {
+      padding-bottom: 10px;
+      margin-bottom: 10px;
+
+      &:not(:last-child) {
+        border-bottom: 1px solid $light;
+      }
+
+      h5 {
+        margin-bottom: 0;
+      }
+
+      a {
+        font-size: 14px;
+        display: block;
+      }
+    }
+  }
+
+  #bottom-bar {
+    background-color: $dark;
+    padding-bottom: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    p {
+      color: $light;
+    }
+  }
 }

@@ -1,5 +1,21 @@
 @import 'var.scss';
 
 header#header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: $dark2;
+  box-shadow: 0px 0px 5px 0px #000;
 
+  img.logo {
+    height: 60px;
+  }
+
+  .title {
+    color: $light;
+    font-size: 30px;
+    margin-left: 1%;
+    font-family: monospace;
+    font-weight: bold;
+  }
 }

@@ -2,7 +2,8 @@
 
 <?php if (!isset($_SESSION['user_id'])) {?>
 <header id="header">
-
+  <img class="logo" src="design/post-it_icon.png" alt="posting-it_logo">
+  <p class="title mb-0">Posting-it</p>
 </header>
 <?php } ?>
 
