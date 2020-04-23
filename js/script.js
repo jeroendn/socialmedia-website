@@ -1,6 +1,7 @@
 $(document).ready(function() {
 
   $('#feed .post:first-child').addClass('show');
+  get_comments($('#feed .post:first-child').find('input[type="hidden"]').val());
 
   // set feed posts to equal height
   $('#feed .post').css('height', $('#feed .post').outerWidth());

@@ -122,33 +122,34 @@ $(document).ready(function() {
     },
     stop: function(e, ui) {
       $(this).css('left','0');
-
       var distance = ui.position.left - this.previousPosition.left;
-
-      let post_id = $(this).find('input[type="hidden"]').val();
+      let like_or_seen = 'seen';
 
       if (distance > 100) {
-        $.ajax({
-          url: "php/ajax/like_post.php",
-          type: "post",
-          data: { post_id:post_id }
-        })
-        .done(() => {
-          $(this).removeClass('show');
-          $(this).next().addClass('show');
-        });
+        like_or_seen = 'like';
       }
       else if (distance < -100) {
-        $.ajax({
-          url: "php/ajax/seen_post.php",
-          type: "post",
-          data: { post_id:post_id }
-        })
-        .done(() => {
-          $(this).removeClass('show');
-          $(this).next().addClass('show');
-        });
+        like_or_seen = 'seen';
       }
+
+      let post_id = $(this).find('input[type="hidden"]').val();
+      let next_post_id = $(this).next().find('input[type="hidden"]').val();
+
+      $.ajax({
+        url: "php/ajax/" + like_or_seen + "_post.php",
+        type: "post",
+        data: { post_id:post_id }
+      })
+      .done(() => {
+        $(this).removeClass('show');
+        $(this).next().addClass('show');
+        if (next_post_id !== undefined) {
+          get_comments(next_post_id);
+        }
+        else {
+          $('#feed .comments').children().remove();
+        }
+      });
 
     }
   });

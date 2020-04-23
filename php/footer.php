@@ -28,6 +28,6 @@
   </div>
 
   <div id="bottom-bar">
-    <p>Posting-it&copy; 2020</p>
+    <p class="pt-2">Posting-it&copy; 2020</p>
   </div>
 </footer>
