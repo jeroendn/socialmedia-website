@@ -50,12 +50,12 @@ button.btn-follow, button.btn-unfollow {
 }
 
 a {
-  color: #e0a800;
+  color: $accent1;
   transition: color 200ms ease;
 
   &:hover {
     text-decoration: none;
-    color: #f00;
+    color: $accent2;
   }
 }
 

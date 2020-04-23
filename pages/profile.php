@@ -80,11 +80,40 @@ if ($user_check > 0) {
           <?php } ?>
         </div>
         <?php if($is_owner) { ?>
+        <!-- buttons -->
         <div class="admin-buttons">
           <button class="btn btn-warning" task="update">Update profile</button>
           <a class="btn btn-warning" href="logout">Logout</a>
         </div>
-        <?php }
+      <?php } ?>
+      <!-- follow count -->
+      <div class="follow-count">
+        <p><?php
+        try {
+          $sql = "SELECT COUNT(*) FROM follow INNER JOIN user ON follow.user_id = user.id WHERE follow.followed_user_id = " . $user_data[0]['id'] . " ";
+          $stmt = $conn->prepare($sql);
+          $stmt->execute();
+          $follower_count = $stmt->fetchColumn();
+        }
+        catch(Exception $e) {
+          sql_error($e);
+        }
+        print_r($follower_count);
+        ?> followers</p>
+        <p><?php
+        try {
+          $sql = "SELECT COUNT(*) FROM follow INNER JOIN user ON follow.followed_user_id = user.id WHERE follow.user_id = " . $user_data[0]['id'] . " ";
+          $stmt = $conn->prepare($sql);
+          $stmt->execute();
+          $following_count = $stmt->fetchColumn();
+        }
+        catch(Exception $e) {
+          sql_error($e);
+        }
+        print_r($following_count);
+        ?> following</p>
+      </div>
+      <?php
         }
         else {
           echo '<div class="alert">User has not been found!</div>';

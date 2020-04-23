@@ -100,12 +100,26 @@
 
     .admin-buttons {
       flex: 0 0 100%;
+      flex-flow: row wrap;
       max-width: 100%;
       display: flex;
       justify-content: space-around;
 
       .btn {
-        margin: 10px;
+        margin: 2%;
+        flex: 0 0 46%;
+        max-width: 46%;
+      }
+    }
+
+    .follow-count {
+      flex: 0 0 100%;
+      max-width: 100%;
+      display: flex;
+
+      p {
+        margin-bottom: 0;
+        margin-left: 2%;
       }
     }
   }
@@ -153,7 +167,7 @@
         padding: 0;
         box-shadow: 0px 0px 5px 0px $dark;
         border-radius: 50%;
-        color: #fff;
+        color: $light;
         background: $dark;
         display: flex;
         top: 10px;
