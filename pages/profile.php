@@ -124,6 +124,7 @@ if ($user_check > 0) {
         }
         print_r($following_count);
         ?> following</p>
+        <?php if($user_data[0]['verified'] == true && $is_owner) { ?><p>You are verified <span class="verified"></span></p><?php } ?>
       </div>
       <?php } else { ?><div class="alert">User has not been found!</div><?php } ?>
       <?php if($is_owner) { ?> </form> <?php } else { ?> </section> <?php } ?>

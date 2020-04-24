@@ -10,7 +10,12 @@ function get_comments(post_id) {
 
     $('#feed .comments').children().remove();
     $.each(JSON.parse(comments), function(key, val) {
-      $('#feed .comments').append('<div class="comment"><a href="profile?user=' + val.username + '"><img src="php/get_profile_icon.php?user=' + val.username + '" /></a><p class="username">' + val.username + '</p><p class="message">' + val.text + '</p></div>');
+      if (val.verified == true) {
+        $('#feed .comments').append('<div class="comment"><a href="profile?user=' + val.username + '"><img src="php/get_profile_icon.php?user=' + val.username + '" /></a><p class="username">' + val.username + '<span class="verified"></span></p><p class="message">' + val.text + '</p></div>');
+      }
+      else {
+        $('#feed .comments').append('<div class="comment"><a href="profile?user=' + val.username + '"><img src="php/get_profile_icon.php?user=' + val.username + '" /></a><p class="username">' + val.username + '</p><p class="message">' + val.text + '</p></div>');
+      }
       commment_count++;
     });
     resize_comment_img();

@@ -23,7 +23,7 @@ include_once __DIR__ . '../../php/session.php';
         <?php
         // get posts from db
         try {
-          $sql = "SELECT user.username, post.text, post.id as post_id
+          $sql = "SELECT user.username, user.verified, post.text, post.id as post_id
           FROM post
           INNER JOIN follow ON post.user_id=follow.followed_user_id
           INNER JOIN user ON follow.followed_user_id=user.id
@@ -67,7 +67,7 @@ include_once __DIR__ . '../../php/session.php';
           ?>
           <div class="post">
             <a href="<?php echo 'profile?user=' . $post['username']; ?>"><img src="php/get_profile_icon.php?user=<?php echo htmlspecialchars($post['username']); ?>" /></a>
-            <p class="user"><?php echo htmlspecialchars($post['username']); ?></p>
+            <p class="user"><?php echo htmlspecialchars($post['username']); if($post['verified'] == true) { ?><span class="verified"></span><?php } ?></p>
             <p class="message"><?php echo htmlspecialchars($post['text']); ?></p>
             <p class="like"><?php echo htmlspecialchars($likes[0]['likes']); ?></p>
             <input type="hidden" name="post_id" value="<?php echo htmlspecialchars($post['post_id']); ?>">
