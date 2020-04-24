@@ -28,6 +28,10 @@
     box-shadow: 0 0 2px $light;
     margin-top: -1px;
 
+    @media screen and (max-width: $breakpoint) {
+      left: 50px;
+    }
+
     img {
       width: 30px;
       padding: 5px 3px 3px 3px;

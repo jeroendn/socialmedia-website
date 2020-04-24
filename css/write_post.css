@@ -28,6 +28,12 @@
   margin-top: -1px;
 }
 
+@media screen and (max-width: 840px) {
+  #write-post #open-write-post {
+    left: 50px;
+  }
+}
+
 #write-post #open-write-post img {
   width: 30px;
   padding: 5px 3px 3px 3px;

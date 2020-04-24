@@ -3,7 +3,7 @@ session_start();
 include_once '../../php/dbconnection.php';
 
 $post_id = $_POST['post_id'];
-$comment = $_POST['comment'];
+$comment = substr($_POST['comment'], 0, 255);
 
 if ($post_id != '' && $comment != '') {
   $sql = "INSERT INTO comment (post_id, user_id, text) VALUES (:post_id, :user_id, :comment)";

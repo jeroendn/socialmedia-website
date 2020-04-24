@@ -14,5 +14,5 @@ if ($_POST['post_id'] != '') {
   echo json_encode($comments);
 }
 else {
-  die(header("HTTP/1.0 400 User_id not defined"));
+  die(header("HTTP/1.0 400 Post_id not defined"));
 }
