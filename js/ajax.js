@@ -173,4 +173,60 @@ $(document).ready(function() {
     });
   });
 
+  // ban user
+  $('#profile a[task="ban"]').on('click', function () {
+    let user_id = $(this).closest('.admin-buttons').find('input[type="hidden"]').val();
+
+    $.ajax({
+      url: "php/ajax/user_ban.php",
+      type: "post",
+      data: { user_id:user_id }
+    })
+    .done(() => {
+      location.reload(true);
+    });
+  });
+
+  // unban user
+  $('#profile a[task="unban"]').on('click', function () {
+    let user_id = $(this).closest('.admin-buttons').find('input[type="hidden"]').val();
+
+    $.ajax({
+      url: "php/ajax/user_unban.php",
+      type: "post",
+      data: { user_id:user_id }
+    })
+    .done(() => {
+      location.reload(true);
+    });
+  });
+
+  // verify user
+  $('#profile a[task="verify"]').on('click', function () {
+    let user_id = $(this).closest('.admin-buttons').find('input[type="hidden"]').val();
+
+    $.ajax({
+      url: "php/ajax/user_verify.php",
+      type: "post",
+      data: { user_id:user_id }
+    })
+    .done(() => {
+      location.reload(true);
+    });
+  });
+
+  // unverify user
+  $('#profile a[task="unverify"]').on('click', function () {
+    let user_id = $(this).closest('.admin-buttons').find('input[type="hidden"]').val();
+
+    $.ajax({
+      url: "php/ajax/user_unverify.php",
+      type: "post",
+      data: { user_id:user_id }
+    })
+    .done(() => {
+      location.reload(true);
+    });
+  });
+
 });
