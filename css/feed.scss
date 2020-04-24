@@ -38,6 +38,7 @@
 
     &:nth-child(3n-1) {
       background-image: url('../design/sticky_note_green.png');
+      color: $dark;
     }
 
     &:before {

@@ -37,6 +37,7 @@
 
 #feed .post:nth-child(3n-1), #profile .profile-posts .post:nth-child(3n-1) {
   background-image: url("../design/sticky_note_green.png");
+  color: #333;
 }
 
 #feed .post:before, #profile .profile-posts .post:before {

@@ -16,6 +16,7 @@ include_once __DIR__ . '../../php/session.php';
     <main id="feed" class="page-content">
       <section class="container mt-5 pb-3">
         <?php
+        var_dump($_SESSION);
         // get posts from db
         try {
           $sql = "SELECT user.username, post.text, post.id as post_id

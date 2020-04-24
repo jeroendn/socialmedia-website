@@ -68,7 +68,7 @@ if ($user_check > 0) {
           <?php if($is_owner) {?>
           <input class="form-control" type="text" name="username" value="<?php echo htmlspecialchars($user_data[0]['username']); ?>" placeholder="Your username">
           <?php } else { ?>
-          <h4><?php echo htmlspecialchars($user_data[0]['username']) ?></h4>
+          <h4><?php echo htmlspecialchars($user_data[0]['username']); if ($user_data[0]['verified'] == true) { echo '<span class="verified"></span>'; } ?></h4>
           <?php } ?>
           <!-- follow button -->
           <?php if(!$is_owner) { $user_id = $user_data[0]['id']; include __DIR__ . '../../php/template_parts/follow_btn.php'; } ?>

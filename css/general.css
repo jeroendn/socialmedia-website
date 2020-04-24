@@ -63,6 +63,23 @@ textarea::-webkit-scrollbar-track, textarea::-webkit-scrollbar-thumb {
   display: none;
 }
 
+.verified {
+  position: relative;
+}
+
+.verified:before {
+  content: '';
+  background-image: url("../design/verified_logo.png");
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  right: -25px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
 #login .container {
   box-shadow: inset 0 0 10px #000;
 }
