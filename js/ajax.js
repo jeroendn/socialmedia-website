@@ -114,6 +114,7 @@ $(document).ready(function() {
     });
   });
 
+  // submit post like or seen
   $('#feed .post:not(:last-child)').draggable(
     {
     axis: 'x',
@@ -148,10 +149,27 @@ $(document).ready(function() {
         }
         else {
           $('#feed .comments').children().remove();
+          $('#feed .write-comment').remove();
         }
       });
 
     }
+  });
+
+  // place comment
+  $('#feed .write-comment button.btn').on('click', function () {
+    let post_id = $('.post.show').find('input[type="hidden"]').val();
+    let comment = $(this).closest('.write-comment').find('textarea').val();
+
+    $.ajax({
+      url: "php/ajax/place_comment.php",
+      type: "post",
+      data: { post_id:post_id, comment:comment }
+    })
+    .done(() => {
+      $(this).closest('.write-comment').find('textarea').val('');
+      get_comments(post_id);
+    });
   });
 
 });

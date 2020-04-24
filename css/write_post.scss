@@ -16,10 +16,6 @@
 
     textarea {
       min-height: 100px;
-
-      &::-webkit-scrollbar-track, &::-webkit-scrollbar-thumb {
-        display: none;
-      }
     }
   }
 

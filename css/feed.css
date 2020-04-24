@@ -128,38 +128,47 @@
   }
 }
 
-#feed .comments .comment {
+#feed .comment-section .write-comment {
+  margin: -10px;
+  padding: 10px;
+  border-radius: 5px;
+  background: #444;
+  box-shadow: inset 0 0 5px #000;
+}
+
+#feed .comment-section .comments .comment {
   background-color: #FFFA89;
   color: #333;
   box-shadow: 5px 5px 20px -10px #000;
   transform: rotateZ(-2deg);
   margin: 24px 8px;
   padding: 4px 16px;
+  border-radius: 2px;
 }
 
-#feed .comments .comment:nth-child(3n - 1) {
+#feed .comment-section .comments .comment:nth-child(3n - 1) {
   background-color: #98F15B;
   color: #333;
 }
 
-#feed .comments .comment:nth-child(3n) {
+#feed .comment-section .comments .comment:nth-child(3n) {
   background-color: #E01D4D;
   color: #f7f7f7;
 }
 
-#feed .comments .comment:nth-child(4n-3) {
+#feed .comment-section .comments .comment:nth-child(4n-3) {
   transform: rotateZ(-1deg);
 }
 
-#feed .comments .comment:nth-child(5n-3) {
+#feed .comment-section .comments .comment:nth-child(5n-3) {
   transform: rotateZ(-2deg) translate(-10px);
 }
 
-#feed .comments .comment:nth-child(6n-2) {
+#feed .comment-section .comments .comment:nth-child(6n-2) {
   transform: translate(10px);
 }
 
-#feed .comments .comment img {
+#feed .comment-section .comments .comment img {
   height: 50px;
   user-select: none;
   -webkit-user-drag: none;
@@ -173,7 +182,7 @@
   top: -10px;
 }
 
-#feed .comments .comment .username {
+#feed .comment-section .comments .comment .username {
   margin-left: 40px;
   cursor: pointer;
 }

@@ -74,8 +74,12 @@ include_once __DIR__ . '../../php/session.php';
         </div>
       </section>
 
-      <section class="container mt-3 comments">
-
+      <section class="container mt-4 mb-4 comment-section">
+        <div class="write-comment">
+          <textarea class="form-control" placeholder="Write a comment"></textarea>
+          <button class="btn btn-warning">Comment</button>
+        </div>
+        <div class="comments"></div>
       </section>
     </main>
 

@@ -58,6 +58,10 @@ a {
   }
 }
 
+textarea::-webkit-scrollbar-track, textarea::-webkit-scrollbar-thumb {
+  display: none;
+}
+
 // login page
 #login .container {
   box-shadow: inset 0 0 10px #000;
