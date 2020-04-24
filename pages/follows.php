@@ -20,7 +20,7 @@ include_once __DIR__ . '../../php/session.php';
         <div class=" follow-you active">
         <?php
         try {
-          $sql = "SELECT * FROM follow INNER JOIN user ON follow.followed_user_id = user.id WHERE follow.user_id = '" . $_SESSION['user_id'] . "' ";
+          $sql = "SELECT * FROM follow INNER JOIN user ON follow.followed_user_id = user.id WHERE follow.user_id = '" . $_SESSION['user_id'] . "' AND user.banned = false";
           $stmt = $conn->prepare($sql);
           $stmt->execute();
           $user_data = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -42,7 +42,7 @@ include_once __DIR__ . '../../php/session.php';
         <div class="you-follow">
         <?php
         try {
-          $sql = "SELECT * FROM follow INNER JOIN user ON follow.user_id = user.id WHERE follow.followed_user_id = '" . $_SESSION['user_id'] . "' ";
+          $sql = "SELECT * FROM follow INNER JOIN user ON follow.user_id = user.id WHERE follow.followed_user_id = '" . $_SESSION['user_id'] . "' AND user.banned = false";
           $stmt = $conn->prepare($sql);
           $stmt->execute();
           $user_data = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -64,7 +64,7 @@ include_once __DIR__ . '../../php/session.php';
         <h4 class="text-center mt-4 mb-4">Suggestions to follow</h4>
         <?php
         try {
-          $sql = "SELECT * FROM user WHERE id != '" . $_SESSION['user_id'] . "' ORDER BY rand() LIMIT 10";
+          $sql = "SELECT * FROM user WHERE id != '" . $_SESSION['user_id'] . "' AND banned = false ORDER BY rand() LIMIT 10";
           $stmt = $conn->prepare($sql);
           $stmt->execute();
           $user_data = $stmt->fetchAll(PDO::FETCH_ASSOC);

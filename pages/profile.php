@@ -52,6 +52,7 @@ if ($user_check > 0) {
     <?php include_once __DIR__ . '../../php/header.php'; ?>
 
     <main id="profile" class="page-content">
+      <?php if($user_data[0]['banned'] == false) { ?>
       <?php if($is_owner) { ?> <form <?php } else { ?> <section <?php } ?> class="container mt-3 mb-3 pb-3 profile-header" action="php/ajax/profile_submit.php" method="post" enctype="multipart/form-data">
         <?php
         if ($user_check > 0) {
@@ -80,12 +81,19 @@ if ($user_check > 0) {
           <?php } ?>
         </div>
         <?php if($is_owner) { ?>
-        <!-- buttons -->
-        <div class="admin-buttons">
+        <!-- profile control buttons -->
+        <div class="profile-buttons">
           <button class="btn btn-warning" task="update">Update profile</button>
           <a class="btn btn-warning" href="logout">Logout</a>
         </div>
       <?php } ?>
+      <!-- admin control buttons -->
+      <?php if ($_SESSION['is_admin'] == true): ?>
+      <div class="admin-buttons">
+        <?php if($user_data[0]['verified'] == true) { ?><a class="btn btn-warning" href="unverify">Unverify user</a><?php } else { ?><a class="btn btn-warning" href="verify">Verify user</a><?php } ?>
+        <?php if($user_data[0]['banned'] == true) { ?><a class="btn btn-danger" task="ban">Unban user</a><?php } else { ?><a class="btn btn-danger" task="ban">Ban user</a><?php } ?>
+      </div>
+      <?php endif; ?>
       <!-- follow count -->
       <div class="follow-count">
         <p><?php
@@ -155,8 +163,11 @@ if ($user_check > 0) {
               <input type="hidden" name="post_id" value="<?php echo htmlspecialchars($post['post_id']); ?>">
             </div>
 
-        <?php } } ?>
+        <?php } } } else { ?>
       </section>
+    <?php  ?>
+      <div class="alert container mt-5">This user has been banned!</div>
+    <?php } ?>
     </main>
 
     <?php include_once __DIR__ . '../../php/footer.php'; ?>

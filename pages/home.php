@@ -16,7 +16,6 @@ include_once __DIR__ . '../../php/session.php';
     <main id="feed" class="page-content">
       <section class="container mt-5 pb-3">
         <?php
-        var_dump($_SESSION);
         // get posts from db
         try {
           $sql = "SELECT user.username, post.text, post.id as post_id
@@ -25,7 +24,8 @@ include_once __DIR__ . '../../php/session.php';
           INNER JOIN user ON follow.followed_user_id=user.id
           WHERE
           follow.user_id = '" . $_SESSION['user_id'] . "' AND
-          post.deleted = 0 AND
+          post.deleted = false AND
+          user.banned = false AND
           post.id NOT IN (SELECT post_id FROM post INNER JOIN seen ON post.id=seen.post_id WHERE seen.user_id = '" . $_SESSION['user_id'] . "') AND
           post.id NOT IN (SELECT post_id FROM post INNER JOIN likes ON post.id=likes.post_id WHERE likes.user_id = '" . $_SESSION['user_id'] . "')
           ORDER BY post.date DESC LIMIT 100";
