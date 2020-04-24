@@ -15,7 +15,6 @@ if ($_POST['mail'] != '' && $_POST['password'] != '') {
 		$_SESSION['username'] = htmlspecialchars($user['username']);
 		$_SESSION['is_admin'] = $user['admin'];
 		$_SESSION['is_banned'] = $user['banned'];
-		if (!isset($_SESSION['is_first_login'])) { $_SESSION['is_first_login'] = 0;	}
 	}
 	else {
 	  die(header("HTTP/1.0 400 Incorrect login data"));

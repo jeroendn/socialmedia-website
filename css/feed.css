@@ -1,5 +1,100 @@
 @charset "UTF-8";
-#feed section:first-child, #profile .profile-posts section:first-child {
+#feed section.swipe {
+  position: absolute;
+  left: 50%;
+  top: 25px;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#feed section.swipe p {
+  margin: 0 30px;
+  font-weight: bold;
+  font-size: 20px;
+  display: flex;
+}
+
+#feed section.swipe p .left:before, #feed section.swipe p .right:before {
+  font-family: 'Font Awesome 5 Free';
+  font-weight: bold;
+  font-size: 25px;
+  margin: 0 30px;
+  display: block;
+  line-height: initial;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+#feed section.swipe p .left:before {
+  content: '\f100';
+  animation-name: swipe-left;
+}
+
+#feed section.swipe p .right:before {
+  content: '\f101';
+  animation-name: swipe-right;
+}
+
+@keyframes swipe-left {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-15px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes swipe-right {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(15px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+#feed section.swipe img {
+  height: 40px;
+  animation-duration: 5s;
+  animation-name: swipe-icon;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes swipe-icon {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(50px);
+  }
+  75% {
+    transform: translateX(-50px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+#feed section.posts, #profile .profile-posts section.posts {
   border-bottom: 1px solid #f7f7f7;
 }
 

@@ -14,7 +14,12 @@ include_once __DIR__ . '../../php/session.php';
     <?php include_once __DIR__ . '../../php/header.php'; ?>
 
     <main id="feed" class="page-content">
-      <section class="container mt-5 pb-3">
+      <section class="container swipe">
+        <p>Skip<span class="left"></span></p>
+        <img src="design/post-it_icon.png">
+        <p><span class="right"></span>Like</p>
+      </section>
+      <section class="container mt-5 pb-3 posts">
         <?php
         // get posts from db
         try {

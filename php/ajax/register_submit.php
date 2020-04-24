@@ -50,7 +50,6 @@ if ($mail != '' && $password != '' && $repeated_password != '' && $name != '' &&
   // create a folder for the user it's files
   mkdir($_SERVER['DOCUMENT_ROOT'] . '/media/' . str_replace(' ', '_', $name) . $user[0]['id']);
 
-  $_SESSION['is_first_login'] = 1;
   // sent to login in order to set session variables
   include 'login_submit.php';
 }

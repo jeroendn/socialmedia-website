@@ -1,8 +1,77 @@
 @import 'var.scss';
 
+#feed section.swipe {
+  position: absolute;
+  left: 50%;
+  top: 25px;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  p {
+    margin: 0 30px;
+    font-weight: bold;
+    font-size: 20px;
+    display: flex;
+
+    .left:before, .right:before {
+      font-family: 'Font Awesome 5 Free';
+      font-weight: bold;
+      font-size: 25px;
+      margin: 0 30px;
+      display: block;
+      line-height: initial;
+      animation-duration: 2s;
+      animation-iteration-count: infinite;
+      animation-timing-function: ease-in-out;
+    }
+
+    .left:before {
+      content: '\f100';
+      animation-name: swipe-left;
+    }
+
+    .right:before {
+      content: '\f101';
+      animation-name: swipe-right;
+    }
+
+    @keyframes swipe-left {
+      0%   {transform: translateX(0);}
+      25%  {transform: translateX(0);}
+      50%  {transform: translateX(-15px);}
+      100% {transform: translateX(0);}
+    }
+
+    @keyframes swipe-right {
+      0%   {transform: translateX(0);}
+      25%  {transform: translateX(0);}
+      50%  {transform: translateX(15px);}
+      100% {transform: translateX(0);}
+    }
+  }
+
+  img {
+    height: 40px;
+    animation-duration: 5s;
+    animation-name: swipe-icon;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+
+    @keyframes swipe-icon {
+      0%   {transform: translateX(0);}
+      25%   {transform: translateX(0);}
+      50%  {transform: translateX(50px);}
+      75%  {transform: translateX(-50px);}
+      100%   {transform: translateX(0);}
+    }
+  }
+}
+
 // .post is also used as a base for profile post styling
 #feed, #profile .profile-posts {
-  section:first-child {
+  section.posts {
     // background-image: url('../design/sticky_note_stack.png');
     border-bottom: 1px solid $light;
   }

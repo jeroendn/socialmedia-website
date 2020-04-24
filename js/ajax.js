@@ -144,6 +144,7 @@ $(document).ready(function() {
       .done(() => {
         $(this).removeClass('show');
         $(this).next().addClass('show');
+        $('#feed .swipe').fadeOut('slow');
         if (next_post_id !== undefined) {
           get_comments(next_post_id);
         }
