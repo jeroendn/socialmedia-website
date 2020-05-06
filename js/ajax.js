@@ -158,7 +158,7 @@ $(document).ready(function() {
   });
 
   // place comment
-  $('#feed .write-comment button.btn').on('click', function () {
+  $('.write-comment button.btn').on('click', function () {
     let post_id = $('.post.show').find('input[type="hidden"]').val();
     let comment = $(this).closest('.write-comment').find('textarea').val();
 
@@ -177,7 +177,6 @@ $(document).ready(function() {
   $('#profile a[task="ban"], #profile a[task="unban"], #profile a[task="verify"], #profile a[task="unverify"]').on('click', function () {
     let user_id = $(this).closest('.admin-buttons').find('input[type="hidden"]').val();
     let task = $(this).attr('task');
-    console.log(task);
 
     $.ajax({
       url: "php/ajax/user_" + task + ".php",

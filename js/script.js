@@ -1,7 +1,8 @@
 $(document).ready(function() {
 
   $('#feed .post:first-child').addClass('show');
-  get_comments($('#feed .post:first-child').find('input[type="hidden"]').val());
+  get_comments($('#feed .post:first-child').find('input[name="post_id"]').val());
+  get_comments($('#post .post:first-child').find('input[name="post_id"]').val());
 
   // set feed posts to equal height
   $('#feed .post').css('height', $('#feed .post').outerWidth());
@@ -15,6 +16,13 @@ $(document).ready(function() {
 
   $(window).resize(function() {
     $('#profile .post').css('height', $('#profile .post').outerWidth());
+  });
+
+  // set detail posts to equal height
+  $('#post .post').css('height', $('#post .post').outerWidth());
+
+  $(window).resize(function() {
+    $('#post .post').css('height', $('#post .post').outerWidth());
   });
 
   // profile img upload
@@ -57,6 +65,13 @@ $(document).ready(function() {
       $(this).parent().find('.you-follow').removeClass('active');
       $(this).removeClass('active');
     }
+  });
+
+  // link post to detail page on click
+  $('.post').on('click', function () {
+    window.location.href = 'post?id=' + $(this).find('input[name="post_id"]').val();
+  }).children(':not(.message)').click(function(e) {
+    return false;
   });
 
 });

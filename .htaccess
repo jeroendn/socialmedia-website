@@ -19,5 +19,6 @@ RewriteRule ^home$ pages/home.php
 RewriteRule ^feed$ pages/home.php
 RewriteRule ^profile$ pages/profile.php
 RewriteRule ^follows$ pages/follows.php
+RewriteRule ^post$ pages/post.php
 
 DirectoryIndex index.php

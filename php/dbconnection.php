@@ -1,16 +1,16 @@
 <?php
-$servername = "remotemysql.com";
-$dBUsername = "9GXhYUf6Mj";
-$dBPassword = "UFbiUZ5Dlk";
-$dBName = "9GXhYUf6Mj";
+$servername = "web0098.zxcs.nl";
+$db_username = "u71481p69034_socialmedia";
+$db_password = "TBgelVA7Z";
+$db_name = "u71481p69034_socialmedia";
 
 // $servername = "localhost";
-// $dBUsername = "root";
-// $dBPassword = "";
-// $dBName = "socialmedia";
+// $db_username = "root";
+// $db_password = "";
+// $db_name = "socialmedia";
 
 try {
-	$conn = new PDO("mysql:host=$servername;dbname=$dBName",$dBUsername,$dBPassword);
+	$conn = new PDO("mysql:host=$servername;dbname=$db_name",$db_username,$db_password);
 	$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 }
 catch(PDOException $e) {

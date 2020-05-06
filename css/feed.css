@@ -94,11 +94,11 @@
   }
 }
 
-#feed section.posts, #profile .profile-posts section.posts {
+#feed section.posts, #profile .profile-posts section.posts, #post section.posts {
   border-bottom: 1px solid #f7f7f7;
 }
 
-#feed .post, #profile .profile-posts .post {
+#feed .post, #profile .profile-posts .post, #post .post {
   background-image: url("../design/sticky_note_pink.png");
   background-repeat: no-repeat;
   background-size: contain;
@@ -110,32 +110,33 @@
   display: flex;
   transition: opacity 500ms ease;
   left: 0;
+  cursor: pointer;
 }
 
 @media screen and (max-width: 840px) {
-  #feed .post, #profile .profile-posts .post {
+  #feed .post, #profile .profile-posts .post, #post .post {
     padding: 10%;
   }
 }
 
-#feed .post:not(.show), #profile .profile-posts .post:not(.show) {
+#feed .post:not(.show), #profile .profile-posts .post:not(.show), #post .post:not(.show) {
   visibility: hidden;
   opacity: 0;
   height: 0 !important;
   padding: 0;
 }
 
-#feed .post:nth-child(3n-2), #profile .profile-posts .post:nth-child(3n-2) {
+#feed .post:nth-child(3n-2), #profile .profile-posts .post:nth-child(3n-2), #post .post:nth-child(3n-2) {
   background-image: url("../design/sticky_note_yellow.png");
   color: #333;
 }
 
-#feed .post:nth-child(3n-1), #profile .profile-posts .post:nth-child(3n-1) {
+#feed .post:nth-child(3n-1), #profile .profile-posts .post:nth-child(3n-1), #post .post:nth-child(3n-1) {
   background-image: url("../design/sticky_note_green.png");
   color: #333;
 }
 
-#feed .post:before, #profile .profile-posts .post:before {
+#feed .post:before, #profile .profile-posts .post:before, #post .post:before {
   content: '';
   background-image: url(../design/paperclip.png);
   position: absolute;
@@ -148,7 +149,7 @@
   z-index: 1;
 }
 
-#feed .post img, #profile .profile-posts .post img {
+#feed .post img, #profile .profile-posts .post img, #post .post img {
   position: absolute;
   top: 1%;
   left: 5%;
@@ -163,36 +164,36 @@
   -webkit-user-drag: none;
 }
 
-#feed .post img:hover, #profile .profile-posts .post img:hover {
+#feed .post img:hover, #profile .profile-posts .post img:hover, #post .post img:hover {
   transform: none;
 }
 
-#feed .post p.user, #profile .profile-posts .post p.user {
+#feed .post p.user, #profile .profile-posts .post p.user, #post .post p.user {
   position: absolute;
   top: calc(8% - 10px);
   left: 25%;
   font-size: 18px;
 }
 
-#feed .post p.message, #profile .profile-posts .post p.message {
+#feed .post p.message, #profile .profile-posts .post p.message, #post .post p.message {
   font-family: "Indie Flower", cursive;
   font-size: 30px;
   transform: rotate(-1deg);
 }
 
 @media screen and (max-width: 840px) {
-  #feed .post p.message, #profile .profile-posts .post p.message {
+  #feed .post p.message, #profile .profile-posts .post p.message, #post .post p.message {
     font-size: 20px;
   }
 }
 
 @media screen and (max-width: 380px) {
-  #feed .post p.message, #profile .profile-posts .post p.message {
+  #feed .post p.message, #profile .profile-posts .post p.message, #post .post p.message {
     font-size: 15px;
   }
 }
 
-#feed .post p.like, #profile .profile-posts .post p.like {
+#feed .post p.like, #profile .profile-posts .post p.like, #post .post p.like {
   position: absolute;
   bottom: 5%;
   left: 15%;
@@ -203,12 +204,12 @@
 }
 
 @media screen and (max-width: 840px) {
-  #feed .post p.like, #profile .profile-posts .post p.like {
+  #feed .post p.like, #profile .profile-posts .post p.like, #post .post p.like {
     font-size: 20px;
   }
 }
 
-#feed .post p.like:before, #profile .profile-posts .post p.like:before {
+#feed .post p.like:before, #profile .profile-posts .post p.like:before, #post .post p.like:before {
   content: '👍';
   font-size: 80px;
   position: absolute;
@@ -218,76 +219,8 @@
 }
 
 @media screen and (max-width: 840px) {
-  #feed .post p.like:before, #profile .profile-posts .post p.like:before {
+  #feed .post p.like:before, #profile .profile-posts .post p.like:before, #post .post p.like:before {
     bottom: 0;
     font-size: calc(20px + 4vw);
   }
-}
-
-#feed .comment-section {
-  position: relative;
-}
-
-#feed .comment-section .write-comment {
-  margin: -10px;
-  padding: 10px;
-  border-radius: 5px;
-  background: #444;
-  box-shadow: inset 0 0 5px #000;
-}
-
-#feed .comment-section .write-comment .comment-count {
-  position: absolute;
-  top: -40px;
-}
-
-#feed .comment-section .comments .comment {
-  background-color: #FFFA89;
-  color: #333;
-  box-shadow: 5px 5px 20px -10px #000;
-  transform: rotateZ(-2deg);
-  margin: 24px 8px;
-  padding: 4px 16px;
-  border-radius: 2px;
-}
-
-#feed .comment-section .comments .comment:nth-child(3n - 1) {
-  background-color: #98F15B;
-  color: #333;
-}
-
-#feed .comment-section .comments .comment:nth-child(3n) {
-  background-color: #E01D4D;
-  color: #f7f7f7;
-}
-
-#feed .comment-section .comments .comment:nth-child(4n-3) {
-  transform: rotateZ(-1deg);
-}
-
-#feed .comment-section .comments .comment:nth-child(5n-3) {
-  transform: rotateZ(-2deg) translate(-10px);
-}
-
-#feed .comment-section .comments .comment:nth-child(6n-2) {
-  transform: translate(10px);
-}
-
-#feed .comment-section .comments .comment img {
-  height: 50px;
-  user-select: none;
-  -webkit-user-drag: none;
-  object-fit: cover;
-  border-radius: 50%;
-  box-shadow: 0 0 10px #000;
-  background: #444;
-  cursor: pointer;
-  position: absolute;
-  left: -5px;
-  top: -10px;
-}
-
-#feed .comment-section .comments .comment .username {
-  margin-left: 40px;
-  cursor: pointer;
 }

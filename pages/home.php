@@ -80,14 +80,7 @@ include_once __DIR__ . '../../php/session.php';
         </div>
       </section>
 
-      <section class="container mt-4 mb-4 comment-section">
-        <div class="write-comment">
-          <span class="comment-count">0 comments</span>
-          <textarea class="form-control" placeholder="Write a comment"></textarea>
-          <button class="btn btn-warning">Comment</button>
-        </div>
-        <div class="comments"></div>
-      </section>
+      <?php include_once __DIR__ . '../../php/template_parts/comment_section.php'; ?>
     </main>
 
     <?php include_once __DIR__ . '../../php/footer.php'; ?>

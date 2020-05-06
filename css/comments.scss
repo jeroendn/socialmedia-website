@@ -1,0 +1,71 @@
+@import 'var.scss';
+
+.comment-section {
+  position: relative;
+
+  .write-comment {
+    margin: -10px;
+    padding: 10px;
+    border-radius: 5px;
+    background: $dark2;
+    box-shadow: inset 0 0 5px #000;
+
+    .comment-count {
+      position: absolute;
+      top: -40px;
+    }
+  }
+
+  .comments {
+    .comment {
+      background-color: #FFFA89;
+      color: $dark;
+      box-shadow: 5px 5px 20px -10px #000;
+      transform: rotateZ(-2deg);
+      margin: 24px 8px;
+      padding: 4px 16px;
+      border-radius: 2px;
+
+      &:nth-child(3n - 1) {
+        background-color: #98F15B;
+        color: $dark;
+      }
+
+      &:nth-child(3n) {
+        background-color: #E01D4D;
+        color: $light;
+      }
+
+      &:nth-child(4n-3) {
+        transform: rotateZ(-1deg);
+      }
+
+      &:nth-child(5n-3) {
+        transform: rotateZ(-2deg) translate(-10px);
+      }
+
+      &:nth-child(6n-2) {
+        transform: translate(10px);
+      }
+
+      img {
+        height: 50px;
+        user-select: none;
+        -webkit-user-drag: none;
+        object-fit: cover;
+        border-radius: 50%;
+        box-shadow: 0 0 10px #000;
+        background: $dark2;
+        cursor: pointer;
+        position: absolute;
+        left: -5px;
+        top: -10px;
+      }
+
+      .username {
+        margin-left: 40px;
+        cursor: pointer;
+      }
+    }
+  }
+}
