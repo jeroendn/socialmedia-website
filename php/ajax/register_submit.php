@@ -48,7 +48,7 @@ if ($mail != '' && $password != '' && $repeated_password != '' && $name != '' &&
   $user = $stmt->fetchAll();
 
   // create a folder for the user it's files
-  mkdir($_SERVER['DOCUMENT_ROOT'] . '/media/' . str_replace(' ', '_', $name) . $user[0]['id']);
+  mkdir('../../media/' . str_replace(' ', '_', $name) . $user[0]['id']);
 
   // sent to login in order to set session variables
   include 'login_submit.php';

@@ -2,7 +2,7 @@
 session_start();
 include_once __DIR__ . '../../php/dbconnection.php';
 
-$dir = $_SERVER['DOCUMENT_ROOT'] . '/media/';
+$dir = '../media/';
 $user = (!empty($_GET['user'])) ? basename($_GET['user']) : false;
 
 $sql = "SELECT id FROM user WHERE username = '" . $user . "' LIMIT 1";

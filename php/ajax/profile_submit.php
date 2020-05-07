@@ -5,7 +5,7 @@ include_once __DIR__ . '../../dbconnection.php';
 // save profile img
 $file_name = 'profile_icon.png';
 
-$dir = $_SERVER['DOCUMENT_ROOT'] . '/media/' . str_replace(' ', '_', $_SESSION['username']) . $_SESSION['user_id'] . '/';
+$dir = '../../media/' . str_replace(' ', '_', $_SESSION['username']) . $_SESSION['user_id'] . '/';
 
 move_uploaded_file($_FILES["file_upload"]["tmp_name"], $dir . $file_name);
 
@@ -42,7 +42,7 @@ try {
   $stmt->execute();
 
   $_SESSION['username'] = $username;
-  $newdir = $_SERVER['DOCUMENT_ROOT'] . '/media/' . str_replace(' ', '_', $_SESSION['username']) . $_SESSION['user_id'] . '/';
+  $newdir = '../../media/' . str_replace(' ', '_', $_SESSION['username']) . $_SESSION['user_id'] . '/';
   rename($dir, $newdir);
   header('location: ../../profile?user=' . htmlspecialchars($_SESSION['username']) . '&update=success');
   exit;
