@@ -20,5 +20,10 @@ RewriteRule ^feed$ pages/home.php
 RewriteRule ^profile$ pages/profile.php
 RewriteRule ^follows$ pages/follows.php
 RewriteRule ^post$ pages/post.php
+RewriteRule ^about$ pages/about.php
+RewriteRule ^request-verification$ pages/request_verification.php
+RewriteRule ^request-unban$ pages/request_unban.php
+RewriteRule ^help$ pages/help.php
+RewriteRule ^close-account$ pages/close_account.php
 
 DirectoryIndex index.php

@@ -68,7 +68,7 @@ include_once __DIR__ . '../../php/session.php';
           <div class="post">
             <a href="<?php echo 'profile?user=' . $post['username']; ?>"><img src="php/get_profile_icon.php?user=<?php echo htmlspecialchars($post['username']); ?>" /></a>
             <p class="user"><?php echo htmlspecialchars($post['username']); if($post['verified'] == true) { ?><span class="verified"></span><?php } ?></p>
-            <p class="message"><?php echo htmlspecialchars($post['text']); ?></p>
+            <p class="message"><?php echo preg_replace('/(?<!\S)http:\/\/([0-9a-zA-Z.]+)/', '<a href="http://$1" target="_blank">$1</a>', preg_replace('/(?<!\S)https:\/\/([0-9a-zA-Z.]+)/', '<a href="https://$1" target="_blank">$1</a>', htmlspecialchars($post['text']))); ?></p>
             <p class="like"><?php echo htmlspecialchars($likes[0]['likes']); ?></p>
             <input type="hidden" name="post_id" value="<?php echo htmlspecialchars($post['post_id']); ?>">
           </div>

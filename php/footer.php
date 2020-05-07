@@ -18,14 +18,14 @@
       <a href="login">Create account</a><?php } ?>
       <a href="home">Feed</a>
       <a href="follows">Following</a>
-      <a href="#!">Request verification</a>
-      <a href="#!">Request unban</a>
+      <a href="request-verification">Request verification</a>
+      <a href="request-unban">Request unban</a>
     </div>
     <div>
       <h5>Support</h5>
       <a href="help">Help</a>
-      <a href="#!">Close account</a>
-      <a href="#!">About us</a>
+      <a href="close-account">Close account</a>
+      <a href="about">About us</a>
     </div>
   </div>
 

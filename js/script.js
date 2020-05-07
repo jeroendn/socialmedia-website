@@ -70,8 +70,10 @@ $(document).ready(function() {
   // link post to detail page on click
   $('.post').on('click', function () {
     window.location.href = 'post?id=' + $(this).find('input[name="post_id"]').val();
-  }).children(':not(.message)').click(function(e) {
-    return false;
+  });
+
+  $('.post > *:not(.message), .post > .message a').click(function(e) {
+     e.stopPropagation();
   });
 
 });
