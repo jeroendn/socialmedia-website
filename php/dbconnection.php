@@ -1,7 +1,7 @@
 <?php
 $servername = "web0098.zxcs.nl";
-$db_username = "u71481p69034_socialmedia";
-$db_password = "TBgelVA7Z";
+$db_username = "u71481p69034_projects";
+$db_password = "PycIWi64";
 $db_name = "u71481p69034_socialmedia";
 
 // $servername = "localhost";

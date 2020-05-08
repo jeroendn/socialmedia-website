@@ -18,6 +18,7 @@ function get_comments(post_id) {
       }
       commment_count++;
     });
+    
     resize_comment_img();
 
     if (commment_count != 1) {

@@ -68,7 +68,7 @@ $(document).ready(function() {
   });
 
   // link post to detail page on click
-  $('main:not(#feed) .post').on('click', function () {
+  $('main:not(#feed):not(#post) .post').on('click', function () {
     window.location.href = 'post?id=' + $(this).find('input[name="post_id"]').val();
   });
 
