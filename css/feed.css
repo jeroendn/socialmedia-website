@@ -10,10 +10,29 @@
 }
 
 #feed section.swipe p {
-  margin: 0 30px;
   font-weight: bold;
   font-size: 20px;
   display: flex;
+}
+
+#feed section.swipe p:first-of-type {
+  margin-left: 30px;
+}
+
+@media screen and (max-width: 500px) {
+  #feed section.swipe p:first-of-type {
+    margin-left: 10px;
+  }
+}
+
+#feed section.swipe p:last-of-type {
+  margin-right: 30px;
+}
+
+@media screen and (max-width: 500px) {
+  #feed section.swipe p:last-of-type {
+    margin-right: 10px;
+  }
 }
 
 #feed section.swipe p .left:before, #feed section.swipe p .right:before {

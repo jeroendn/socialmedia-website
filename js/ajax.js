@@ -154,6 +154,11 @@ $(document).ready(function() {
         }
       });
 
+      // make element clickable again
+      setTimeout(function(){
+        $(e.target).data('dragging', false);
+      }, 1);
+
     }
   });
 

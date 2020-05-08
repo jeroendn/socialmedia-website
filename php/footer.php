@@ -30,6 +30,6 @@
   </div>
 
   <div id="bottom-bar">
-    <p class="pt-2">Posting-it&copy; 2020</p>
+    <p class="pt-2">&copy; 2020 - <?php echo date('Y', $_SERVER['REQUEST_TIME']); ?> Posting-it</p>
   </div>
 </footer>

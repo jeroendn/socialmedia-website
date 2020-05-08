@@ -31,5 +31,5 @@ function get_comments(post_id) {
 };
 
 function resize_comment_img() {
-  $('.comment-section .comment img').css('width', $('#feed .comment img').outerHeight());
+  $('.comment-section .comment img').css('width', $('.comment-section .comment img').outerHeight());
 }

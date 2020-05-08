@@ -29,8 +29,8 @@ include_once __DIR__ . '../../php/session.php';
           sql_error($e);
         }
 
-        foreach ($user_data as $user) {?>
-          <div class="card mb-2 pr-3 pl-3 pt-1 pb-1">
+        foreach ($user_data as $user) { ?>
+          <div class="card mb-2 pr-2 pl-2 pt-1 pb-1">
             <img src="php/get_profile_icon.php?user=<?php echo htmlspecialchars($user['username']); ?>" />
             <a href="<?php echo 'profile?user=' . htmlspecialchars($user['username']); ?>"><?php echo htmlspecialchars($user['username']); if ($user['verified'] == true) { echo '<span class="verified"></span>'; } ?></a>
             <?php $user_id = $user['id']; $username = $user['username']; include __DIR__ . '../../php/template_parts/follow_btn.php'; ?>
@@ -51,8 +51,8 @@ include_once __DIR__ . '../../php/session.php';
           sql_error($e);
         }
 
-        foreach ($user_data as $user) {?>
-          <div class="card mb-2 pr-3 pl-3 pt-1 pb-1">
+        foreach ($user_data as $user) { ?>
+          <div class="card mb-2 pr-2 pl-2 pt-1 pb-1">
             <img src="php/get_profile_icon.php?user=<?php echo htmlspecialchars($user['username']); ?>" />
             <a href="<?php echo 'profile?user=' . htmlspecialchars($user['username']); ?>"><?php echo htmlspecialchars($user['username']); if ($user['verified'] == true) { echo '<span class="verified"></span>'; } ?></a>
             <?php $user_id = $user['id']; $username = $user['username']; include __DIR__ . '../../php/template_parts/follow_btn.php'; ?>
@@ -73,8 +73,8 @@ include_once __DIR__ . '../../php/session.php';
           sql_error($e);
         }
 
-        foreach ($user_data as $user) {?>
-          <div class="card mb-2 pr-3 pl-3 pt-1 pb-1">
+        foreach ($user_data as $user) { ?>
+          <div class="card mb-2 pr-2 pl-2 pt-1 pb-1">
             <img src="php/get_profile_icon.php?user=<?php echo htmlspecialchars($user['username']); ?>" />
             <a href="<?php echo 'profile?user=' . htmlspecialchars($user['username']); ?>"><?php echo htmlspecialchars($user['username']); if ($user['verified'] == true) { echo '<span class="verified"></span>'; } ?></a>
             <?php $user_id = $user['id']; $username = $user['username']; include __DIR__ . '../../php/template_parts/follow_btn.php'; ?>

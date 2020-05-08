@@ -10,10 +10,25 @@
   align-items: center;
 
   p {
-    margin: 0 30px;
     font-weight: bold;
     font-size: 20px;
     display: flex;
+
+    &:first-of-type {
+      margin-left: 30px;
+
+      @media screen and (max-width: 500px) {
+        margin-left: 10px;
+      }
+    }
+
+    &:last-of-type {
+      margin-right: 30px;
+
+      @media screen and (max-width: 500px) {
+        margin-right: 10px;
+      }
+    }
 
     .left:before, .right:before {
       font-family: 'Font Awesome 5 Free';

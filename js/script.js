@@ -68,10 +68,11 @@ $(document).ready(function() {
   });
 
   // link post to detail page on click
-  $('.post').on('click', function () {
+  $('main:not(#feed) .post').on('click', function () {
     window.location.href = 'post?id=' + $(this).find('input[name="post_id"]').val();
   });
 
+  // make post clickable, but not href links
   $('.post > *:not(.message), .post > .message a').click(function(e) {
      e.stopPropagation();
   });
