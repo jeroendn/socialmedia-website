@@ -30,6 +30,6 @@
   </div>
 
   <div id="bottom-bar">
-    <p class="pt-2">&copy; 2020 - <?php echo date('Y', $_SERVER['REQUEST_TIME']); ?> Posting-it | Made by: <a href="https:://jeroendn.nl">jeroendn.nl</a></p>
+    <p class="pt-2">&copy; 2020 - <?php echo date('Y', $_SERVER['REQUEST_TIME']); ?> Posting-it | Made by: <a href="https://jeroendn.nl">jeroendn.nl</a></p>
   </div>
 </footer>
